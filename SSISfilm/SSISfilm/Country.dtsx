@@ -1,52 +1,42 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="3/18/2021 5:00:48 PM"
+  DTS:CreationDate="3/19/2021 9:02:29 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-9TKNNVCM"
   DTS:CreatorName="LAPTOP-9TKNNVCM\r91pa"
-  DTS:DTSID="{41DF42CB-1EA4-47DF-A040-3C934FD93E41}"
+  DTS:DTSID="{F868704D-A236-483F-A41E-54904A7C88F4}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.150"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Package"
+  DTS:ObjectName="Country"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{477F38EE-F314-4D43-9EE5-2007A9BC469A}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{6051CB65-3D70-4C38-9A13-367D30007551}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{82651409-BF49-46C3-A009-E9F733127942}"
+      DTS:DTSID="{AB4E7D58-9CA1-43EF-B3C7-FF586C98DC3E}"
       DTS:ObjectName="Excel Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\r91pa\Desktop\PersonalProjects\filmtv_movies_project.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[LAPTOP-9TKNNVCM\LEARNINGSERVER.film_DB]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{15820874-F246-44D4-9724-71A7BE271D65}"
-      DTS:ObjectName="LAPTOP-9TKNNVCM\LEARNINGSERVER.film_DB">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=LAPTOP-9TKNNVCM\LEARNINGSERVER;Initial Catalog=film_DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Genre Source Task"
+      DTS:refId="Package\DimCountry Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{F9A74B0C-13A9-476E-8DBD-73390A31173E}"
+      DTS:DTSID="{BCD84A05-B9DC-408E-B118-37C2E2B290E9}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Genre Source Task"
+      DTS:ObjectName="DimCountry Task"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -54,50 +44,50 @@
           version="1">
           <components>
             <component
-              refId="Package\Genre Source Task\Convert Unicode String"
+              refId="Package\DimCountry Task\Convert String Value"
               componentClassID="Microsoft.DataConvert"
               contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Data Conversion"
-              name="Convert Unicode String"
+              name="Convert String Value"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Genre Source Task\Convert Unicode String.Inputs[Data Conversion Input]"
+                  refId="Package\DimCountry Task\Convert String Value.Inputs[Data Conversion Input]"
                   name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Genre Source Task\Convert Unicode String.Inputs[Data Conversion Input].Columns[genre]"
+                      refId="Package\DimCountry Task\Convert String Value.Inputs[Data Conversion Input].Columns[country]"
                       cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="genre"
-                      lineageId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Output].Columns[genre]" />
+                      cachedLength="255"
+                      cachedName="country"
+                      lineageId="Package\DimCountry Task\Country Source.Outputs[Excel Source Output].Columns[country]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Genre Source Task\Convert Unicode String.Outputs[Data Conversion Output]"
+                  refId="Package\DimCountry Task\Convert String Value.Outputs[Data Conversion Output]"
                   exclusionGroup="1"
                   name="Data Conversion Output"
-                  synchronousInputId="Package\Genre Source Task\Convert Unicode String.Inputs[Data Conversion Input]">
+                  synchronousInputId="Package\DimCountry Task\Convert String Value.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Genre Source Task\Convert Unicode String.Outputs[Data Conversion Output].Columns[strGenre]"
+                      refId="Package\DimCountry Task\Convert String Value.Outputs[Data Conversion Output].Columns[strCountry]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\Genre Source Task\Convert Unicode String.Outputs[Data Conversion Output].Columns[strGenre]"
-                      name="strGenre"
+                      length="255"
+                      lineageId="Package\DimCountry Task\Convert String Value.Outputs[Data Conversion Output].Columns[strCountry]"
+                      name="strCountry"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Genre Source Task\Genre Source.Outputs[Excel Source Output].Columns[genre]}</property>
+                          name="SourceInputColumnLineageID">#{Package\DimCountry Task\Country Source.Outputs[Excel Source Output].Columns[country]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -108,22 +98,22 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Genre Source Task\Convert Unicode String.Outputs[Data Conversion Error Output]"
+                  refId="Package\DimCountry Task\Convert String Value.Outputs[Data Conversion Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Data Conversion Error Output"
-                  synchronousInputId="Package\Genre Source Task\Convert Unicode String.Inputs[Data Conversion Input]">
+                  synchronousInputId="Package\DimCountry Task\Convert String Value.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Genre Source Task\Convert Unicode String.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      refId="Package\DimCountry Task\Convert String Value.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Genre Source Task\Convert Unicode String.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DimCountry Task\Convert String Value.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Genre Source Task\Convert Unicode String.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      refId="Package\DimCountry Task\Convert String Value.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Genre Source Task\Convert Unicode String.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DimCountry Task\Convert String Value.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -132,11 +122,161 @@
               </outputs>
             </component>
             <component
-              refId="Package\Genre Source Task\DimGenre Destination"
+              refId="Package\DimCountry Task\Country Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Country Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Sheet1$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DimCountry Task\Country Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DimCountry Task\Country Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimCountry Task\Country Source.Outputs[Excel Source Output].Columns[country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimCountry Task\Country Source.Outputs[Excel Source Output].ExternalColumns[country]"
+                      length="255"
+                      lineageId="Package\DimCountry Task\Country Source.Outputs[Excel Source Output].Columns[country]"
+                      name="country"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DimCountry Task\Country Source.Outputs[Excel Source Output].ExternalColumns[filmtv_id]"
+                      dataType="r8"
+                      name="filmtv_id" />
+                    <externalMetadataColumn
+                      refId="Package\DimCountry Task\Country Source.Outputs[Excel Source Output].ExternalColumns[title]"
+                      dataType="wstr"
+                      length="255"
+                      name="title" />
+                    <externalMetadataColumn
+                      refId="Package\DimCountry Task\Country Source.Outputs[Excel Source Output].ExternalColumns[year]"
+                      dataType="r8"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\DimCountry Task\Country Source.Outputs[Excel Source Output].ExternalColumns[genre]"
+                      dataType="wstr"
+                      length="255"
+                      name="genre" />
+                    <externalMetadataColumn
+                      refId="Package\DimCountry Task\Country Source.Outputs[Excel Source Output].ExternalColumns[duration]"
+                      dataType="r8"
+                      name="duration" />
+                    <externalMetadataColumn
+                      refId="Package\DimCountry Task\Country Source.Outputs[Excel Source Output].ExternalColumns[country]"
+                      dataType="wstr"
+                      length="255"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\DimCountry Task\Country Source.Outputs[Excel Source Output].ExternalColumns[director]"
+                      dataType="wstr"
+                      length="255"
+                      name="director" />
+                    <externalMetadataColumn
+                      refId="Package\DimCountry Task\Country Source.Outputs[Excel Source Output].ExternalColumns[actors]"
+                      dataType="wstr"
+                      length="255"
+                      name="actors" />
+                    <externalMetadataColumn
+                      refId="Package\DimCountry Task\Country Source.Outputs[Excel Source Output].ExternalColumns[avg_vote]"
+                      dataType="r8"
+                      name="avg_vote" />
+                    <externalMetadataColumn
+                      refId="Package\DimCountry Task\Country Source.Outputs[Excel Source Output].ExternalColumns[votes]"
+                      dataType="r8"
+                      name="votes" />
+                    <externalMetadataColumn
+                      refId="Package\DimCountry Task\Country Source.Outputs[Excel Source Output].ExternalColumns[description]"
+                      dataType="nText"
+                      name="description" />
+                    <externalMetadataColumn
+                      refId="Package\DimCountry Task\Country Source.Outputs[Excel Source Output].ExternalColumns[notes]"
+                      dataType="wstr"
+                      length="255"
+                      name="notes" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DimCountry Task\Country Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimCountry Task\Country Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimCountry Task\Country Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimCountry Task\Country Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimCountry Task\Country Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\DimCountry Task\Country Source.Outputs[Excel Source Error Output].Columns[country]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DimCountry Task\Country Source.Outputs[Excel Source Error Output].Columns[country]"
+                      name="country" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DimCountry Task\DimCountry Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="DimGenre Destination"
+              name="DimCountry Destination"
               usesDispositions="true"
               version="4">
               <properties>
@@ -147,7 +287,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[DimGenre]</property>
+                  name="OpenRowset">[dbo].[DimCountry]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -189,63 +329,63 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Genre Source Task\DimGenre Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LAPTOP-9TKNNVCM\LEARNINGSERVER.film_DB]"
-                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-9TKNNVCM\LEARNINGSERVER.film_DB]"
+                  refId="Package\DimCountry Task\DimCountry Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{CB85184D-07BE-45EB-A834-A60CF9AC679B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-9TKNNVCM_LEARNINGSERVER.film_DB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Genre Source Task\DimGenre Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\DimCountry Task\DimCountry Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Genre Source Task\DimGenre Destination.Inputs[OLE DB Destination Input].Columns[strGenre]"
+                      refId="Package\DimCountry Task\DimCountry Destination.Inputs[OLE DB Destination Input].Columns[strCountry]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="strGenre"
+                      cachedLength="255"
+                      cachedName="strCountry"
                       cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\Genre Source Task\DimGenre Destination.Inputs[OLE DB Destination Input].ExternalColumns[genre_name]"
-                      lineageId="Package\Genre Source Task\Sort and Remove Duplicates.Outputs[Sort Output].Columns[strGenre]" />
+                      externalMetadataColumnId="Package\DimCountry Task\DimCountry Destination.Inputs[OLE DB Destination Input].ExternalColumns[country_name]"
+                      lineageId="Package\DimCountry Task\Sort and Remove Duplicates.Outputs[Sort Output].Columns[strCountry]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Genre Source Task\DimGenre Destination.Inputs[OLE DB Destination Input].ExternalColumns[genre_id]"
+                      refId="Package\DimCountry Task\DimCountry Destination.Inputs[OLE DB Destination Input].ExternalColumns[country_id]"
                       dataType="i4"
-                      name="genre_id" />
+                      name="country_id" />
                     <externalMetadataColumn
-                      refId="Package\Genre Source Task\DimGenre Destination.Inputs[OLE DB Destination Input].ExternalColumns[genre_name]"
+                      refId="Package\DimCountry Task\DimCountry Destination.Inputs[OLE DB Destination Input].ExternalColumns[country_name]"
                       codePage="1252"
                       dataType="str"
                       length="30"
-                      name="genre_name" />
+                      name="country_name" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Genre Source Task\DimGenre Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\DimCountry Task\DimCountry Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Genre Source Task\DimGenre Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\DimCountry Task\DimCountry Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Genre Source Task\DimGenre Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\DimCountry Task\DimCountry Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Genre Source Task\DimGenre Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DimCountry Task\DimCountry Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Genre Source Task\DimGenre Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\DimCountry Task\DimCountry Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Genre Source Task\DimGenre Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DimCountry Task\DimCountry Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -254,161 +394,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Genre Source Task\Genre Source"
-              componentClassID="Microsoft.ExcelSource"
-              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Excel Source"
-              name="Genre Source"
-              usesDispositions="true"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">Sheet1$</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="The mapping from parameters in the SQL command to variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Genre Source Task\Genre Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Output]"
-                  name="Excel Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Output].Columns[genre]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Output].ExternalColumns[genre]"
-                      length="50"
-                      lineageId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Output].Columns[genre]"
-                      name="genre"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Output].ExternalColumns[filmtv_id]"
-                      dataType="r8"
-                      name="filmtv_id" />
-                    <externalMetadataColumn
-                      refId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Output].ExternalColumns[title]"
-                      dataType="wstr"
-                      length="255"
-                      name="title" />
-                    <externalMetadataColumn
-                      refId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Output].ExternalColumns[year]"
-                      dataType="r8"
-                      name="year" />
-                    <externalMetadataColumn
-                      refId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Output].ExternalColumns[genre]"
-                      dataType="wstr"
-                      length="255"
-                      name="genre" />
-                    <externalMetadataColumn
-                      refId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Output].ExternalColumns[duration]"
-                      dataType="r8"
-                      name="duration" />
-                    <externalMetadataColumn
-                      refId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Output].ExternalColumns[country]"
-                      dataType="wstr"
-                      length="255"
-                      name="country" />
-                    <externalMetadataColumn
-                      refId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Output].ExternalColumns[director]"
-                      dataType="wstr"
-                      length="255"
-                      name="director" />
-                    <externalMetadataColumn
-                      refId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Output].ExternalColumns[actors]"
-                      dataType="wstr"
-                      length="255"
-                      name="actors" />
-                    <externalMetadataColumn
-                      refId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Output].ExternalColumns[avg_vote]"
-                      dataType="r8"
-                      name="avg_vote" />
-                    <externalMetadataColumn
-                      refId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Output].ExternalColumns[votes]"
-                      dataType="r8"
-                      name="votes" />
-                    <externalMetadataColumn
-                      refId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Output].ExternalColumns[description]"
-                      dataType="nText"
-                      name="description" />
-                    <externalMetadataColumn
-                      refId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Output].ExternalColumns[notes]"
-                      dataType="wstr"
-                      length="255"
-                      name="notes" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Error Output]"
-                  isErrorOut="true"
-                  name="Excel Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                    <outputColumn
-                      refId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Error Output].Columns[genre]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Error Output].Columns[genre]"
-                      name="genre" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Genre Source Task\Lookup Id"
+              refId="Package\DimCountry Task\Lookup Names"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup Id"
+              name="Lookup Names"
               usesDispositions="true"
               version="6">
               <properties>
@@ -417,14 +407,14 @@
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimGenre]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimCountry]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimGenre]) [refTable]
-where [refTable].[genre_name] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimCountry]) [refTable]
+where [refTable].[country_name] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -455,12 +445,12 @@ where [refTable].[genre_name] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="genre_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="genre_name" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="country_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="country_name" dataType="DT_STR" length="30" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Genre Source Task\Sort and Remove Duplicates.Outputs[Sort Output].Columns[strGenre]};</property>
+                  name="ParameterMap">#{Package\DimCountry Task\Sort and Remove Duplicates.Outputs[Sort Output].Columns[strCountry]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -472,30 +462,30 @@ where [refTable].[genre_name] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Genre Source Task\Lookup Id.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LAPTOP-9TKNNVCM\LEARNINGSERVER.film_DB]"
-                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-9TKNNVCM\LEARNINGSERVER.film_DB]"
+                  refId="Package\DimCountry Task\Lookup Names.Connections[OleDbConnection]"
+                  connectionManagerID="{CB85184D-07BE-45EB-A834-A60CF9AC679B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-9TKNNVCM_LEARNINGSERVER.film_DB]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Genre Source Task\Lookup Id.Inputs[Lookup Input]"
+                  refId="Package\DimCountry Task\Lookup Names.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Genre Source Task\Lookup Id.Inputs[Lookup Input].Columns[strGenre]"
+                      refId="Package\DimCountry Task\Lookup Names.Inputs[Lookup Input].Columns[strCountry]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="strGenre"
+                      cachedLength="255"
+                      cachedName="strCountry"
                       cachedSortKeyPosition="1"
-                      lineageId="Package\Genre Source Task\Sort and Remove Duplicates.Outputs[Sort Output].Columns[strGenre]">
+                      lineageId="Package\DimCountry Task\Sort and Remove Duplicates.Outputs[Sort Output].Columns[strCountry]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">genre_name</property>
+                          name="JoinToReferenceColumn">country_name</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -508,38 +498,38 @@ where [refTable].[genre_name] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Genre Source Task\Lookup Id.Outputs[Lookup Match Output]"
+                  refId="Package\DimCountry Task\Lookup Names.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\Genre Source Task\Lookup Id.Inputs[Lookup Input]">
+                  synchronousInputId="Package\DimCountry Task\Lookup Names.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Genre Source Task\Lookup Id.Outputs[Lookup No Match Output]"
+                  refId="Package\DimCountry Task\Lookup Names.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\Genre Source Task\Lookup Id.Inputs[Lookup Input]">
+                  synchronousInputId="Package\DimCountry Task\Lookup Names.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Genre Source Task\Lookup Id.Outputs[Lookup Error Output]"
+                  refId="Package\DimCountry Task\Lookup Names.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\Genre Source Task\Lookup Id.Inputs[Lookup Input]">
+                  synchronousInputId="Package\DimCountry Task\Lookup Names.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Genre Source Task\Lookup Id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\DimCountry Task\Lookup Names.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Genre Source Task\Lookup Id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DimCountry Task\Lookup Names.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Genre Source Task\Lookup Id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\DimCountry Task\Lookup Names.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Genre Source Task\Lookup Id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DimCountry Task\Lookup Names.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -548,28 +538,28 @@ where [refTable].[genre_name] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Genre Source Task\Replace Null Value"
+              refId="Package\DimCountry Task\Replace Nulls"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Replace Null Value"
+              name="Replace Nulls"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Genre Source Task\Replace Null Value.Inputs[Derived Column Input]"
+                  refId="Package\DimCountry Task\Replace Nulls.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Genre Source Task\Replace Null Value.Inputs[Derived Column Input].Columns[strGenre]"
+                      refId="Package\DimCountry Task\Replace Nulls.Inputs[Derived Column Input].Columns[strCountry]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="strGenre"
+                      cachedLength="255"
+                      cachedName="strCountry"
                       cachedSortKeyPosition="1"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Genre Source Task\Sort and Remove Duplicates.Outputs[Sort Output].Columns[strGenre]"
+                      lineageId="Package\DimCountry Task\Sort and Remove Duplicates.Outputs[Sort Output].Columns[strCountry]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -577,13 +567,13 @@ where [refTable].[genre_name] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[REPLACENULL](#{Package\Genre Source Task\Sort and Remove Duplicates.Outputs[Sort Output].Columns[strGenre]},"Unknown")</property>
+                          name="Expression">[REPLACENULL](#{Package\DimCountry Task\Sort and Remove Duplicates.Outputs[Sort Output].Columns[strCountry]},"Unknown")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">REPLACENULL(strGenre,"Unknown")</property>
+                          name="FriendlyExpression">REPLACENULL(strCountry,"Unknown")</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -592,31 +582,31 @@ where [refTable].[genre_name] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Genre Source Task\Replace Null Value.Outputs[Derived Column Output]"
+                  refId="Package\DimCountry Task\Replace Nulls.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Genre Source Task\Replace Null Value.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\DimCountry Task\Replace Nulls.Inputs[Derived Column Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Genre Source Task\Replace Null Value.Outputs[Derived Column Error Output]"
+                  refId="Package\DimCountry Task\Replace Nulls.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Genre Source Task\Replace Null Value.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\DimCountry Task\Replace Nulls.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Genre Source Task\Replace Null Value.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\DimCountry Task\Replace Nulls.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Genre Source Task\Replace Null Value.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DimCountry Task\Replace Nulls.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Genre Source Task\Replace Null Value.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\DimCountry Task\Replace Nulls.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Genre Source Task\Replace Null Value.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DimCountry Task\Replace Nulls.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -625,7 +615,7 @@ where [refTable].[genre_name] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Genre Source Task\Sort and Remove Duplicates"
+              refId="Package\DimCountry Task\Sort and Remove Duplicates"
               componentClassID="Microsoft.Sort"
               contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
@@ -644,15 +634,15 @@ where [refTable].[genre_name] = ?</property>
               </properties>
               <inputs>
                 <input
-                  refId="Package\Genre Source Task\Sort and Remove Duplicates.Inputs[Sort Input]"
+                  refId="Package\DimCountry Task\Sort and Remove Duplicates.Inputs[Sort Input]"
                   name="Sort Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Genre Source Task\Sort and Remove Duplicates.Inputs[Sort Input].Columns[genre]"
+                      refId="Package\DimCountry Task\Sort and Remove Duplicates.Inputs[Sort Input].Columns[country]"
                       cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="genre"
-                      lineageId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Output].Columns[genre]">
+                      cachedLength="255"
+                      cachedName="country"
+                      lineageId="Package\DimCountry Task\Country Source.Outputs[Excel Source Output].Columns[country]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -665,12 +655,12 @@ where [refTable].[genre_name] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Genre Source Task\Sort and Remove Duplicates.Inputs[Sort Input].Columns[strGenre]"
+                      refId="Package\DimCountry Task\Sort and Remove Duplicates.Inputs[Sort Input].Columns[strCountry]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="strGenre"
-                      lineageId="Package\Genre Source Task\Convert Unicode String.Outputs[Data Conversion Output].Columns[strGenre]">
+                      cachedLength="255"
+                      cachedName="strCountry"
+                      lineageId="Package\DimCountry Task\Convert String Value.Outputs[Data Conversion Output].Columns[strCountry]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -688,38 +678,38 @@ where [refTable].[genre_name] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Genre Source Task\Sort and Remove Duplicates.Outputs[Sort Output]"
+                  refId="Package\DimCountry Task\Sort and Remove Duplicates.Outputs[Sort Output]"
                   isSorted="true"
                   name="Sort Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Genre Source Task\Sort and Remove Duplicates.Outputs[Sort Output].Columns[genre]"
+                      refId="Package\DimCountry Task\Sort and Remove Duplicates.Outputs[Sort Output].Columns[country]"
                       dataType="wstr"
-                      length="50"
-                      lineageId="Package\Genre Source Task\Sort and Remove Duplicates.Outputs[Sort Output].Columns[genre]"
-                      name="genre">
+                      length="255"
+                      lineageId="Package\DimCountry Task\Sort and Remove Duplicates.Outputs[Sort Output].Columns[country]"
+                      name="country">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Genre Source Task\Genre Source.Outputs[Excel Source Output].Columns[genre]}</property>
+                          name="SortColumnId">#{Package\DimCountry Task\Country Source.Outputs[Excel Source Output].Columns[country]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Genre Source Task\Sort and Remove Duplicates.Outputs[Sort Output].Columns[strGenre]"
+                      refId="Package\DimCountry Task\Sort and Remove Duplicates.Outputs[Sort Output].Columns[strCountry]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
-                      lineageId="Package\Genre Source Task\Sort and Remove Duplicates.Outputs[Sort Output].Columns[strGenre]"
-                      name="strGenre"
+                      length="255"
+                      lineageId="Package\DimCountry Task\Sort and Remove Duplicates.Outputs[Sort Output].Columns[strCountry]"
+                      name="strCountry"
                       sortKeyPosition="1">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Genre Source Task\Convert Unicode String.Outputs[Data Conversion Output].Columns[strGenre]}</property>
+                          name="SortColumnId">#{Package\DimCountry Task\Convert String Value.Outputs[Data Conversion Output].Columns[strCountry]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -730,30 +720,30 @@ where [refTable].[genre_name] = ?</property>
           </components>
           <paths>
             <path
-              refId="Package\Genre Source Task.Paths[Data Conversion Output]"
-              endId="Package\Genre Source Task\Sort and Remove Duplicates.Inputs[Sort Input]"
+              refId="Package\DimCountry Task.Paths[Data Conversion Output]"
+              endId="Package\DimCountry Task\Sort and Remove Duplicates.Inputs[Sort Input]"
               name="Data Conversion Output"
-              startId="Package\Genre Source Task\Convert Unicode String.Outputs[Data Conversion Output]" />
+              startId="Package\DimCountry Task\Convert String Value.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Genre Source Task.Paths[Derived Column Output]"
-              endId="Package\Genre Source Task\Lookup Id.Inputs[Lookup Input]"
+              refId="Package\DimCountry Task.Paths[Derived Column Output]"
+              endId="Package\DimCountry Task\Lookup Names.Inputs[Lookup Input]"
               name="Derived Column Output"
-              startId="Package\Genre Source Task\Replace Null Value.Outputs[Derived Column Output]" />
+              startId="Package\DimCountry Task\Replace Nulls.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Genre Source Task.Paths[Excel Source Output]"
-              endId="Package\Genre Source Task\Convert Unicode String.Inputs[Data Conversion Input]"
+              refId="Package\DimCountry Task.Paths[Excel Source Output]"
+              endId="Package\DimCountry Task\Convert String Value.Inputs[Data Conversion Input]"
               name="Excel Source Output"
-              startId="Package\Genre Source Task\Genre Source.Outputs[Excel Source Output]" />
+              startId="Package\DimCountry Task\Country Source.Outputs[Excel Source Output]" />
             <path
-              refId="Package\Genre Source Task.Paths[Lookup No Match Output]"
-              endId="Package\Genre Source Task\DimGenre Destination.Inputs[OLE DB Destination Input]"
+              refId="Package\DimCountry Task.Paths[Lookup No Match Output]"
+              endId="Package\DimCountry Task\DimCountry Destination.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
-              startId="Package\Genre Source Task\Lookup Id.Outputs[Lookup No Match Output]" />
+              startId="Package\DimCountry Task\Lookup Names.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\Genre Source Task.Paths[Sort Output]"
-              endId="Package\Genre Source Task\Replace Null Value.Inputs[Derived Column Input]"
+              refId="Package\DimCountry Task.Paths[Sort Output]"
+              endId="Package\DimCountry Task\Replace Nulls.Inputs[Derived Column Input]"
               name="Sort Output"
-              startId="Package\Genre Source Task\Sort and Remove Duplicates.Outputs[Sort Output]" />
+              startId="Package\DimCountry Task\Sort and Remove Duplicates.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -772,39 +762,39 @@ where [refTable].[genre_name] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="168,42"
-          Id="Package\Genre Source Task"
-          TopLeft="165,80" />
+          Size="160,42"
+          Id="Package\DimCountry Task"
+          TopLeft="37,51" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Genre Source Task">
+    design-time-name="Package\DimCountry Task">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="143,42"
-          Id="Package\Genre Source Task\Genre Source"
-          TopLeft="186.083333333333,32" />
+          Size="151,42"
+          Id="Package\DimCountry Task\Country Source"
+          TopLeft="91,19" />
         <NodeLayout
-          Size="187,42"
-          Id="Package\Genre Source Task\Convert Unicode String"
-          TopLeft="164.083333333333,119" />
+          Size="176,42"
+          Id="Package\DimCountry Task\Convert String Value"
+          TopLeft="74,96" />
         <EdgeLayout
-          Id="Package\Genre Source Task.Paths[Excel Source Output]"
-          TopLeft="257.583333333333,74">
+          Id="Package\DimCountry Task.Paths[Excel Source Output]"
+          TopLeft="164.25,61">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45"
+              EndConnector="0,35"
               Start="0,0"
-              End="0,37.5">
+              End="0,27.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.5" />
+                    End="0,27.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -815,69 +805,11 @@ where [refTable].[genre_name] = ?</property>
         </EdgeLayout>
         <NodeLayout
           Size="212,42"
-          Id="Package\Genre Source Task\Sort and Remove Duplicates"
-          TopLeft="151.583333333333,194" />
+          Id="Package\DimCountry Task\Sort and Remove Duplicates"
+          TopLeft="61,166" />
         <EdgeLayout
-          Id="Package\Genre Source Task.Paths[Data Conversion Output]"
-          TopLeft="257.583333333333,161">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33"
-              Start="0,0"
-              End="0,25.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="182,42"
-          Id="Package\Genre Source Task\DimGenre Destination"
-          TopLeft="166.583333333333,419" />
-        <NodeLayout
-          Size="126,42"
-          Id="Package\Genre Source Task\Lookup Id"
-          TopLeft="201.083333333333,336" />
-        <EdgeLayout
-          Id="Package\Genre Source Task.Paths[Lookup No Match Output]"
-          TopLeft="260.833333333333,378">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41"
-              Start="0,0"
-              End="0,33.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,10.9453125,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Genre Source Task\Replace Null Value"
-          TopLeft="180.583333333333,264" />
-        <EdgeLayout
-          Id="Package\Genre Source Task.Paths[Sort Output]"
-          TopLeft="260.583333333333,236">
+          Id="Package\DimCountry Task.Paths[Data Conversion Output]"
+          TopLeft="164.5,138">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -897,20 +829,24 @@ where [refTable].[genre_name] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="142,42"
+          Id="Package\DimCountry Task\Replace Nulls"
+          TopLeft="99,246" />
         <EdgeLayout
-          Id="Package\Genre Source Task.Paths[Derived Column Output]"
-          TopLeft="263.833333333333,306">
+          Id="Package\DimCountry Task.Paths[Sort Output]"
+          TopLeft="168.5,208">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30"
+              EndConnector="0,38"
               Start="0,0"
-              End="0,22.5">
+              End="0,30.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.5" />
+                    End="0,30.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -919,11 +855,77 @@ where [refTable].[genre_name] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="148,42"
+          Id="Package\DimCountry Task\Lookup Names"
+          TopLeft="103,336" />
+        <EdgeLayout
+          Id="Package\DimCountry Task.Paths[Derived Column Output]"
+          TopLeft="173.5,288">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="191,42"
+          Id="Package\DimCountry Task\DimCountry Destination"
+          TopLeft="90,425" />
+        <EdgeLayout
+          Id="Package\DimCountry Task.Paths[Lookup No Match Output]"
+          TopLeft="177,378">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.5,47"
+              Start="0,0"
+              End="8.5,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="4,23.5" />
+                  <mssgle:LineSegment
+                    End="4.5,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.5,23.5"
+                    Point2="8.5,23.5"
+                    Point3="8.5,27.5" />
+                  <mssgle:LineSegment
+                    End="8.5,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-51.55638671875,28.5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Genre Source Task\Genre Source">
+    design-time-name="Package\DimCountry Task\Country Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -936,20 +938,7 @@ where [refTable].[genre_name] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Genre Source Task\DimGenre Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Genre Source Task\Lookup Id">
+    design-time-name="Package\DimCountry Task\Lookup Names">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -959,7 +948,7 @@ where [refTable].[genre_name] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DimGenre]</Value>
+          type="q3:string">[dbo].[DimCountry]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -968,6 +957,19 @@ where [refTable].[genre_name] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimCountry Task\DimCountry Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

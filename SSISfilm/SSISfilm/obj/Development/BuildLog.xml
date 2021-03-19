@@ -2,13 +2,38 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SSISfilm</Name>
-    <LastWriteTime>2021-03-18T22:20:37.1069511Z</LastWriteTime>
+    <LastWriteTime>2021-03-19T14:13:17.1916344Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
-      <Name>Package.dtsx</Name>
-      <LastWriteTime>2021-03-18T22:41:08.9289768Z</LastWriteTime>
+      <Name>Genre.dtsx</Name>
+      <LastWriteTime>2021-03-19T14:00:44.9695198Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Main.dtsx</Name>
+      <LastWriteTime>2021-03-19T14:09:14.5511Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Country.dtsx</Name>
+      <LastWriteTime>2021-03-19T14:17:54.0953287Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Director.dtsx</Name>
+      <LastWriteTime>2021-03-19T14:03:31.3358528Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Year.dtsx</Name>
+      <LastWriteTime>2021-03-19T14:04:05.7999993Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>FactFilm.dtsx</Name>
+      <LastWriteTime>2021-03-19T14:04:21.9133931Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Main"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{3EE4B27F-1D63-488F-938E-3A8765F6CDD5}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{145004C5-3AC8-47BD-AAEA-913747022F6D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -158,6 +158,10 @@
           Id="Package\Director Task"
           TopLeft="96,99" />
         <NodeLayout
+          Size="147,42"
+          Id="Package\Fact Film Task"
+          TopLeft="60,385" />
+        <NodeLayout
           Size="132,42"
           Id="Package\Genre Task"
           TopLeft="88,194" />
@@ -165,10 +169,6 @@
           Size="125,42"
           Id="Package\Year Task"
           TopLeft="73,287" />
-        <NodeLayout
-          Size="147,42"
-          Id="Package\Fact Film Task"
-          TopLeft="60,385" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="163,49">

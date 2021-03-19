@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactFilm"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{8C4A6924-8122-43C4-95EC-C37AFEC61A05}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{1E307440-DA8A-4197-AA82-CC3A5BC94599}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -419,6 +419,20 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
+                      refId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].Columns[intFilmtv_id]"
+                      cachedDataType="i4"
+                      cachedName="intFilmtv_id"
+                      externalMetadataColumnId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].ExternalColumns[filmtv_id]"
+                      lineageId="Package\Fact Film Task\Convert Data Values.Outputs[Data Conversion Output].Columns[intFilmtv_id]" />
+                    <inputColumn
+                      refId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].Columns[strTitle]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="strTitle"
+                      externalMetadataColumnId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].ExternalColumns[title]"
+                      lineageId="Package\Fact Film Task\Convert Data Values.Outputs[Data Conversion Output].Columns[strTitle]" />
+                    <inputColumn
                       refId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].Columns[year_id]"
                       cachedDataType="i4"
                       cachedName="year_id"
@@ -431,6 +445,12 @@
                       externalMetadataColumnId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].ExternalColumns[genre]"
                       lineageId="Package\Fact Film Task\Lookup Genre.Outputs[Lookup Match Output].Columns[genre_id]" />
                     <inputColumn
+                      refId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].Columns[intDuration]"
+                      cachedDataType="i4"
+                      cachedName="intDuration"
+                      externalMetadataColumnId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].ExternalColumns[duration]"
+                      lineageId="Package\Fact Film Task\Convert Data Values.Outputs[Data Conversion Output].Columns[intDuration]" />
+                    <inputColumn
                       refId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].Columns[country_id]"
                       cachedDataType="i4"
                       cachedName="country_id"
@@ -442,20 +462,6 @@
                       cachedName="director_id"
                       externalMetadataColumnId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].ExternalColumns[director]"
                       lineageId="Package\Fact Film Task\Lookup Director.Outputs[Lookup Match Output].Columns[director_id]" />
-                    <inputColumn
-                      refId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].Columns[strTitle]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="strTitle"
-                      externalMetadataColumnId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].ExternalColumns[title]"
-                      lineageId="Package\Fact Film Task\Convert Data Values.Outputs[Data Conversion Output].Columns[strTitle]" />
-                    <inputColumn
-                      refId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].Columns[intDuration]"
-                      cachedDataType="i4"
-                      cachedName="intDuration"
-                      externalMetadataColumnId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].ExternalColumns[duration]"
-                      lineageId="Package\Fact Film Task\Convert Data Values.Outputs[Data Conversion Output].Columns[intDuration]" />
                     <inputColumn
                       refId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].Columns[strActors]"
                       cachedCodepage="1252"
@@ -476,12 +482,6 @@
                       cachedName="intVotes"
                       externalMetadataColumnId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].ExternalColumns[votes]"
                       lineageId="Package\Fact Film Task\Convert Data Values.Outputs[Data Conversion Output].Columns[intVotes]" />
-                    <inputColumn
-                      refId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].Columns[intFilmtv_id]"
-                      cachedDataType="i4"
-                      cachedName="intFilmtv_id"
-                      externalMetadataColumnId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].ExternalColumns[filmtv_id]"
-                      lineageId="Package\Fact Film Task\Convert Data Values.Outputs[Data Conversion Output].Columns[intFilmtv_id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1629,6 +1629,147 @@ where [refTable].[year_no] = ?</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Fact Film Task\Only Allow New Records"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Only Allow New Records"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[fact_Film]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[fact_Film]) [refTable]
+where [refTable].[filmtv_id] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="filmtv_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="title" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="genre" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="duration" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="country" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="director" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="actors" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="avg_vote" dataType="DT_NUMERIC" length="0" precision="18" scale="0" codePage="0"/&gt;&lt;referenceColumn name="votes" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Fact Film Task\Convert Data Values.Outputs[Data Conversion Output].Columns[intFilmtv_id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fact Film Task\Only Allow New Records.Connections[OleDbConnection]"
+                  connectionManagerID="{CB85184D-07BE-45EB-A834-A60CF9AC679B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-9TKNNVCM_LEARNINGSERVER.film_DB]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fact Film Task\Only Allow New Records.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fact Film Task\Only Allow New Records.Inputs[Lookup Input].Columns[intFilmtv_id]"
+                      cachedDataType="i4"
+                      cachedName="intFilmtv_id"
+                      lineageId="Package\Fact Film Task\Convert Data Values.Outputs[Data Conversion Output].Columns[intFilmtv_id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">filmtv_id</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fact Film Task\Only Allow New Records.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Fact Film Task\Only Allow New Records.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact Film Task\Only Allow New Records.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Fact Film Task\Only Allow New Records.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact Film Task\Only Allow New Records.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Fact Film Task\Only Allow New Records.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact Film Task\Only Allow New Records.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fact Film Task\Only Allow New Records.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fact Film Task\Only Allow New Records.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fact Film Task\Only Allow New Records.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
@@ -1663,9 +1804,14 @@ where [refTable].[year_no] = ?</property>
               startId="Package\Fact Film Task\Lookup Genre.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Fact Film Task.Paths[Lookup Match Output3]"
-              endId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Fact Film Task\Only Allow New Records.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Fact Film Task\Lookup Year.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fact Film Task.Paths[Lookup No Match Output]"
+              endId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Fact Film Task\Only Allow New Records.Outputs[Lookup No Match Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1694,7 +1840,7 @@ where [refTable].[year_no] = ?</property>
     design-time-name="Package\Fact Film Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="157,42"
           Id="Package\Fact Film Task\Fact Film Source"
@@ -1767,10 +1913,6 @@ where [refTable].[year_no] = ?</property>
           Size="138,42"
           Id="Package\Fact Film Task\Lookup Year"
           TopLeft="97,475" />
-        <NodeLayout
-          Size="178,42"
-          Id="Package\Fact Film Task\Fact Film Destination"
-          TopLeft="78,572" />
         <EdgeLayout
           Id="Package\Fact Film Task.Paths[Derived Column Output]"
           TopLeft="165,223">
@@ -1877,27 +2019,83 @@ where [refTable].[year_no] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Fact Film Task\Only Allow New Records"
+          TopLeft="55,558" />
         <EdgeLayout
           Id="Package\Fact Film Task.Paths[Lookup Match Output3]"
-          TopLeft="166.5,517">
+          TopLeft="166,517">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,55"
+              EndConnector="-14.5,41"
               Start="0,0"
-              End="0,47.5">
+              End="-14.5,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.5" />
+                    End="0,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5"
+                    Point2="0,20.5"
+                    Point3="-4,20.5" />
+                  <mssgle:LineSegment
+                    End="-10.5,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.5,20.5"
+                    Point2="-14.5,20.5"
+                    Point3="-14.5,24.5" />
+                  <mssgle:LineSegment
+                    End="-14.5,33.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,17.9453125,96.3827734375,11.609375"
+              BoundingBox="-55.44138671875,25.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Fact Film Task\Fact Film Destination"
+          TopLeft="102,645" />
+        <EdgeLayout
+          Id="Package\Fact Film Task.Paths[Lookup No Match Output]"
+          TopLeft="151.5,600">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="39.5,45"
+              Start="0,0"
+              End="39.5,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="35.5,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="35.5,22.5"
+                    Point2="39.5,22.5"
+                    Point3="39.5,26.5" />
+                  <mssgle:LineSegment
+                    End="39.5,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-36.05638671875,27.5,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1998,6 +2196,29 @@ where [refTable].[year_no] = ?</property>
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[DimYear]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact Film Task\Only Allow New Records">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[fact_Film]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>

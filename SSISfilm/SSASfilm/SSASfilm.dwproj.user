@@ -3,7 +3,7 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <TargetServer>localhost</TargetServer>
+        <TargetServer>LAPTOP-9TKNNVCM</TargetServer>
         <TargetDatabase>SSASfilm</TargetDatabase>
         <StartObject>
           <ObjectId></ObjectId>

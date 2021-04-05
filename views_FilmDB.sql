@@ -37,3 +37,21 @@ select	year_no as [Year],
 	from DimYear
 	join fact_Film on DimYear.year_id = fact_Film.year
 	group by year_no;
+
+create view v_Movie_Info
+as
+select	title as [Film Title],
+		year_no as [Year Released],
+		genre_name as [Film Genre],
+		duration as Duration,
+		country_name as [Location(s)],
+		director_name as [Director(s)],
+		actors as [Cast],
+		cast(avg_vote as decimal(4,2)) as [Average Vote],
+		votes as [Total Votes]
+	from fact_Film
+	join DimYear on fact_Film.year = DimYear.year_id
+	join DimGenre on fact_Film.genre = DimGenre.genre_id
+	join DimCountry on fact_Film.country = DimCountry.country_id
+	join DimDirector on fact_Film.director = DimDirector.director_id
+		where title is not null;

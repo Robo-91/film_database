@@ -40,6 +40,7 @@ end
 
 create procedure proc_AddMovie
 (
+	@newId int,
 	@newTitle varchar(50),
 	@newYear int,
 	@newGenre varchar(50),
@@ -59,6 +60,19 @@ begin
 			-- if country already exists, grab the id and insert it into the country column
 			-- if director already exists, grad id and insert it into the director column
 			-- else for each column, insert the new value into the field and then grab that new id and insert into the movie table
+			set @newYear = (select year_no from DimYear where year_no = @newYear);
+			set @newGenre = (select genre_name from DimGenre where genre_name = @newGenre);
+			set @newCountry = (select country_name from DimCountry where country_name = @newCountry);
+			set @newDirector = (select director_name from DimDirector where director_name = @newDirector);
+
+			-- Variables for finding id's of each fields from dimension tables and for inserting into the fact_film table
+			declare @yearId int;
+			declare @genreId int;
+			declare @countryId int;
+			declare @directorId int;
+
+			insert into fact_Film(filmtv_id,title,year,genre,duration,country,director,actors,avg_vote,votes)
+			values(@newId,@newTitle,@newYear,@newGenre,@newDuration,@newCountry,@newDirector,@newActors,@newAvgVote,@votes);
 		commit transaction
 	end try
 	begin catch
@@ -66,3 +80,5 @@ begin
 		print 'Error inserting Movie'
 	end catch
 end
+
+

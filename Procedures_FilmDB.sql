@@ -1,3 +1,4 @@
+-- Procedure to create a new Genre
 create procedure proc_AddGenre
 (
 	@newGenre varchar(50)
@@ -8,6 +9,7 @@ begin
 	values(@newGenre);
 end
 
+-- Procedure to create a new Director
 create procedure proc_AddDirector
 (
 	@newDirector varchar(50)
@@ -18,6 +20,7 @@ begin
 	values(@newDirector);
 end
 
+-- Procedure to create a new Year
 create procedure proc_AddYear
 (
 	@newYear int
@@ -28,6 +31,7 @@ begin
 	values(@newYear);
 end
 
+-- Procedure to create a new Country
 create procedure proc_AddCountry
 (
 	@newCountry varchar(50)
@@ -38,6 +42,7 @@ begin
 	values(@newCountry);
 end
 
+-- Procedure to Create a new Movie
 create procedure proc_AddMovie
 (
 	@newId int,

@@ -66,13 +66,13 @@ begin
 			set @newDirector = (select director_name from DimDirector where director_name = @newDirector);
 
 			-- Variables for finding id's of each fields from dimension tables and for inserting into the fact_film table
-			declare @yearId int;
-			declare @genreId int;
-			declare @countryId int;
-			declare @directorId int;
+			declare @yearId int = (select year_id from DimYear where year_no = @newYear);
+			declare @genreId int = (select genre_id from DimGenre where genre_name = @newGenre);
+			declare @countryId int = (select country_id from DimCountry where country_name = @newCountry);
+			declare @directorId int = (select director_id from DimDirector where director_name = @newDirector);
 
 			insert into fact_Film(filmtv_id,title,year,genre,duration,country,director,actors,avg_vote,votes)
-			values(@newId,@newTitle,@newYear,@newGenre,@newDuration,@newCountry,@newDirector,@newActors,@newAvgVote,@votes);
+			values(@newId,@newTitle,@yearId,@genreId,@newDuration,@countryId,@directorId,@newActors,@newAvgVote,@votes);
 		commit transaction
 	end try
 	begin catch

@@ -1,6 +1,6 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="3b41277c-77a8-4e46-9c3b-76a310c57052" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
-  <ID>FilmDWCube</ID>
-  <Name>FilmDWCube</Name>
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="f0e56c0d-859d-4c5e-b6c6-f8990d44d6ce" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Film_Cube</ID>
+  <Name>Film_Cube</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
   <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
   <Annotations>
@@ -8,7 +8,7 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="10" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-6157" scrolltop="13" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="96" x="6853" y="12806" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="10" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-8941" scrolltop="-1806" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="96" x="30903" y="13441" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
               <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
             </font>
@@ -19,24 +19,24 @@
           <layoutmanager>
             <ddsxmlobj />
           </layoutmanager>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimYear" left="20" top="5839" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
-            <control>
-              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000057070000" />
-            </control>
-            <layoutobject>
-              <ddsxmlobj>
-                <property name="LogicalObject" value="dbo_DimYear" vartype="8" />
-              </ddsxmlobj>
-            </layoutobject>
-            <shape groupshapeid="0" groupnode="0" />
-          </ddscontrol>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimDirector" left="10820" top="5839" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimDirector" left="20" top="5839" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000057070000" />
             </control>
             <layoutobject>
               <ddsxmlobj>
                 <property name="LogicalObject" value="dbo_DimDirector" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimYear" left="10820" top="5839" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3000" height="1879" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000057070000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimYear" vartype="8" />
               </ddsxmlobj>
             </layoutobject>
             <shape groupshapeid="0" groupnode="0" />
@@ -82,7 +82,7 @@
             </control>
             <layoutobject>
               <ddsxmlobj>
-                <property name="LogicalObject" value="dataSet.Relations[FK__fact_Film__year__3A81B327]" vartype="8" />
+                <property name="LogicalObject" value="dataSet.Relations[FK__fact_Film__direc__3D5E1FD2]" vartype="8" />
                 <property name="Virtual" value="0" vartype="11" />
                 <property name="VisibleAP" value="0" vartype="3" />
               </ddsxmlobj>
@@ -102,7 +102,7 @@
             </control>
             <layoutobject>
               <ddsxmlobj>
-                <property name="LogicalObject" value="dataSet.Relations[FK__fact_Film__direc__3D5E1FD2]" vartype="8" />
+                <property name="LogicalObject" value="dataSet.Relations[FK__fact_Film__year__3A81B327]" vartype="8" />
                 <property name="Virtual" value="0" vartype="11" />
                 <property name="VisibleAP" value="0" vartype="3" />
               </ddsxmlobj>
@@ -167,11 +167,11 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-      <Value>-6157</Value>
+      <Value>-8941</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>13</Value>
+      <Value>-1806</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
@@ -189,61 +189,61 @@
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
   <Dimensions>
-    <Dimension dwd:design-time-name="fb5d16bc-b70d-425c-a0fd-9b10528ef1bf">
-      <ID>Dim Year</ID>
-      <Name>Dim Year</Name>
-      <DimensionID>Dim Year</DimensionID>
-      <Attributes>
-        <Attribute dwd:design-time-name="6b5e3489-dd50-4049-8f41-78ea0c60cd3f">
-          <AttributeID>Year Id</AttributeID>
-        </Attribute>
-        <Attribute dwd:design-time-name="c5abd611-72e5-4013-834c-58d50f08315b">
-          <AttributeID>Year No</AttributeID>
-        </Attribute>
-      </Attributes>
-    </Dimension>
-    <Dimension dwd:design-time-name="d852d70b-a952-4d25-b0c7-19cee38a6422">
-      <ID>Dim Country</ID>
-      <Name>Dim Country</Name>
-      <DimensionID>Dim Country</DimensionID>
-      <Attributes>
-        <Attribute dwd:design-time-name="89fa319f-d212-4dd4-84d2-a64edf49a66d">
-          <AttributeID>Country Id</AttributeID>
-        </Attribute>
-        <Attribute dwd:design-time-name="e156b098-5a72-4781-94d2-5985a3bc3820">
-          <AttributeID>Country Name</AttributeID>
-        </Attribute>
-      </Attributes>
-    </Dimension>
-    <Dimension dwd:design-time-name="12cca765-7fd6-4210-85ca-f3257b1d37d1">
-      <ID>Dim Genre</ID>
-      <Name>Dim Genre</Name>
-      <DimensionID>Dim Genre</DimensionID>
-      <Attributes>
-        <Attribute dwd:design-time-name="73722f18-6530-45b5-8f04-ddc19d9a7a39">
-          <AttributeID>Genre Id</AttributeID>
-        </Attribute>
-        <Attribute dwd:design-time-name="aa9cc34e-d22f-4a02-be24-38c265ef9368">
-          <AttributeID>Genre Name</AttributeID>
-        </Attribute>
-      </Attributes>
-    </Dimension>
-    <Dimension dwd:design-time-name="7eb697a7-33f6-4a60-b1c3-351eeadfd2cc">
+    <Dimension dwd:design-time-name="f78c6c16-c0bd-4885-85f3-c8cd58e8133a">
       <ID>Dim Director</ID>
       <Name>Dim Director</Name>
       <DimensionID>Dim Director</DimensionID>
       <Attributes>
-        <Attribute dwd:design-time-name="55ef78ee-1256-4522-b1c7-b4072056b7e9">
+        <Attribute dwd:design-time-name="4dc7edcf-962f-41f2-9df5-8107959b47c4">
           <AttributeID>Director Id</AttributeID>
         </Attribute>
-        <Attribute dwd:design-time-name="a4e049ee-ef14-4f2a-8fb2-26eb9b34a94d">
+        <Attribute dwd:design-time-name="7ceeb3e2-95e1-4e67-8a8e-3bbbe0eb98c6">
           <AttributeID>Director Name</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="d6f0dc7c-ebf3-4f82-a815-bad0c5b4a81d">
+      <ID>Dim Genre</ID>
+      <Name>Dim Genre</Name>
+      <DimensionID>Dim Genre</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="a8b5c1c6-249f-49ea-bd69-dc4bbb4d1c80">
+          <AttributeID>Genre Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="080215d6-e922-48ab-8b98-7c1f963cf2ce">
+          <AttributeID>Genre Name</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="f559b5bb-b2ce-4e93-88f8-8c757b3a5ab6">
+      <ID>Dim Country</ID>
+      <Name>Dim Country</Name>
+      <DimensionID>Dim Country</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="a8a472df-594b-4b91-b11d-e65281d76570">
+          <AttributeID>Country Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b339067c-2e80-4103-8f96-12375bf14223">
+          <AttributeID>Country Name</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="7533193c-fd17-4b0e-8887-ecbe14d04a52">
+      <ID>Dim Year</ID>
+      <Name>Dim Year</Name>
+      <DimensionID>Dim Year</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="f306a953-dec3-47fc-93bb-3d8da66f8f98">
+          <AttributeID>Year Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="af44b5b0-5c88-40c1-bf1e-1acdbd9d3935">
+          <AttributeID>Year No</AttributeID>
         </Attribute>
       </Attributes>
     </Dimension>
   </Dimensions>
   <MeasureGroups>
-    <MeasureGroup dwd:design-time-name="b7e71e2b-adee-45d4-8351-9efcc36670ad">
+    <MeasureGroup dwd:design-time-name="de919988-06d3-4cc1-9923-ae890e2bc585">
       <ID>Fact Film</ID>
       <Name>Fact Film</Name>
       <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -251,36 +251,36 @@
       <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
       <State>Unprocessed</State>
       <Measures>
-        <Measure dwd:design-time-name="e5be227c-d3b9-490b-ad44-f013c5ce7a55">
+        <Measure dwd:design-time-name="4931bcad-9e00-4597-ae0a-678c7b98151a">
           <ID>Avg Vote</ID>
           <Name>Avg Vote</Name>
-          <Source dwd:design-time-name="affe4da3-8204-45af-92c1-405aed26b3cd">
+          <Source dwd:design-time-name="0ae2bd10-9e8b-4ce8-a174-92cc796761bc">
             <DataType>Double</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="535440f1-96a2-4ef9-86fc-0254c4ff7cd8">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="5ab17f99-f2ba-4c99-bf3f-92c79d2cb868">
               <TableID>dbo_fact_Film</TableID>
               <ColumnID>avg_vote</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="f3d98601-ecf5-4cd1-8255-4c90bd176e42">
+        <Measure dwd:design-time-name="aefc3675-e419-4f4a-96b6-cfd4131e6639">
           <ID>Votes</ID>
           <Name>Votes</Name>
-          <Source dwd:design-time-name="4807680b-0b12-4f39-8fee-fb73f58bef90">
+          <Source dwd:design-time-name="9a8a15be-ae9b-43b9-905f-db7f3c9bb052">
             <DataType>Integer</DataType>
-            <Source xsi:type="ColumnBinding" dwd:design-time-name="a70364db-c57b-4acb-b623-a92c637b4404">
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="27614bd6-0851-4d83-8f56-33e77ade99b9">
               <TableID>dbo_fact_Film</TableID>
               <ColumnID>votes</ColumnID>
             </Source>
           </Source>
         </Measure>
-        <Measure dwd:design-time-name="86b85563-acde-4ad5-b060-9cc3828037b2">
+        <Measure dwd:design-time-name="3dc41763-0b46-4d6e-968d-4c1d58f4918b">
           <ID>Fact Film Count</ID>
           <Name>Fact Film Count</Name>
           <AggregateFunction>Count</AggregateFunction>
-          <Source dwd:design-time-name="c55cb338-e450-48ad-b379-13a2f94f911d">
+          <Source dwd:design-time-name="72bd8b34-f2ac-45e2-ba71-466c0f0725ca">
             <DataType>Integer</DataType>
             <DataSize>4</DataSize>
-            <Source xsi:type="RowBinding" dwd:design-time-name="6fd1af12-5c7a-43e4-9e54-844c1dd86c72">
+            <Source xsi:type="RowBinding" dwd:design-time-name="f0842247-be1c-4548-82e9-b7bd2fc45185">
               <TableID>dbo_fact_Film</TableID>
             </Source>
           </Source>
@@ -289,18 +289,18 @@
       <StorageMode>Molap</StorageMode>
       <ProcessingMode>Regular</ProcessingMode>
       <Dimensions>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="95aa2e73-dc97-4485-a594-b1ec28ecddc1">
-          <CubeDimensionID>Dim Year</CubeDimensionID>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="e4fbcc21-1d42-4db6-b63f-5fb55107f27b">
+          <CubeDimensionID>Dim Director</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="7902a4a5-7689-4ae2-b90e-dbcda6d11948">
-              <AttributeID>Year Id</AttributeID>
+            <Attribute dwd:design-time-name="9368408e-3e92-4507-8e8a-049675f347f4">
+              <AttributeID>Director Id</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="2c0dd069-87df-4fc0-b5d5-b76843f90437">
+                <KeyColumn dwd:design-time-name="51f6b3d2-55c6-402f-8ce4-a2b0f252a2c6">
                   <DataType>Integer</DataType>
                   <NullProcessing>UnknownMember</NullProcessing>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="60013e46-676a-401e-94c4-6f5b1ecfd742">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e471eb08-eca4-402c-a5be-4f3fa5fac4b5">
                     <TableID>dbo_fact_Film</TableID>
-                    <ColumnID>year</ColumnID>
+                    <ColumnID>director</ColumnID>
                   </Source>
                 </KeyColumn>
               </KeyColumns>
@@ -308,35 +308,16 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="b882b72b-0328-4f6c-a1a1-be0dabff3d15">
-          <CubeDimensionID>Dim Country</CubeDimensionID>
-          <Attributes>
-            <Attribute dwd:design-time-name="93ad774d-a07e-4107-84e2-bba04121f58c">
-              <AttributeID>Country Id</AttributeID>
-              <KeyColumns>
-                <KeyColumn dwd:design-time-name="5db8b390-8383-4a5d-93d2-5327c44e1d66">
-                  <DataType>Integer</DataType>
-                  <NullProcessing>UnknownMember</NullProcessing>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="789cf9e8-e5ee-40f7-bc34-f71ebdb10675">
-                    <TableID>dbo_fact_Film</TableID>
-                    <ColumnID>country</ColumnID>
-                  </Source>
-                </KeyColumn>
-              </KeyColumns>
-              <Type>Granularity</Type>
-            </Attribute>
-          </Attributes>
-        </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="b97b11e8-5237-4b7c-8df5-6998b79cdf80">
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="18e531a4-e768-41aa-beca-2ea7e3243aa2">
           <CubeDimensionID>Dim Genre</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="049a64d0-4e47-48c5-a57b-b550800646f0">
+            <Attribute dwd:design-time-name="a9a5bac7-2fc6-4479-9de1-978a33995f85">
               <AttributeID>Genre Id</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="8e69d4fc-93e8-460d-81a7-7dcd7cb17ca5">
+                <KeyColumn dwd:design-time-name="629616ec-82bb-490a-9707-9dd843fac0a3">
                   <DataType>Integer</DataType>
                   <NullProcessing>UnknownMember</NullProcessing>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="244fbc58-e329-4351-a4b7-d0b2835376fa">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="68aa1902-286a-4488-96d1-77844d285b95">
                     <TableID>dbo_fact_Film</TableID>
                     <ColumnID>genre</ColumnID>
                   </Source>
@@ -346,18 +327,37 @@
             </Attribute>
           </Attributes>
         </Dimension>
-        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="c6d8f8c7-0c08-4d8e-86a1-ac8c14d072e7">
-          <CubeDimensionID>Dim Director</CubeDimensionID>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="de4554b6-a05f-4648-8e39-4fe9fda8204c">
+          <CubeDimensionID>Dim Country</CubeDimensionID>
           <Attributes>
-            <Attribute dwd:design-time-name="83c49421-13a3-483f-9c54-b094592ad577">
-              <AttributeID>Director Id</AttributeID>
+            <Attribute dwd:design-time-name="a635a8d3-342f-4dfd-a45e-2348bfa6cbef">
+              <AttributeID>Country Id</AttributeID>
               <KeyColumns>
-                <KeyColumn dwd:design-time-name="3a662558-2d79-4e0f-b160-910977dc34a4">
+                <KeyColumn dwd:design-time-name="ca026878-00f2-47c6-bc5f-e82e97a4358a">
                   <DataType>Integer</DataType>
                   <NullProcessing>UnknownMember</NullProcessing>
-                  <Source xsi:type="ColumnBinding" dwd:design-time-name="57061b6c-1808-40f6-ba48-cc5b4019398e">
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="8c6dda6e-4ae8-4bc2-82bc-fbb324108394">
                     <TableID>dbo_fact_Film</TableID>
-                    <ColumnID>director</ColumnID>
+                    <ColumnID>country</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="d7622a2f-283c-45fd-b727-ad0eeb736496">
+          <CubeDimensionID>Dim Year</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="5f71c154-563c-4727-906e-b396d382f9a3">
+              <AttributeID>Year Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="a9424baf-6eba-49cc-b868-30d4dcff8477">
+                  <DataType>Integer</DataType>
+                  <NullProcessing>UnknownMember</NullProcessing>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="16b04f62-1cf5-4590-9390-834b5029a8c8">
+                    <TableID>dbo_fact_Film</TableID>
+                    <ColumnID>year</ColumnID>
                   </Source>
                 </KeyColumn>
               </KeyColumns>
@@ -369,7 +369,7 @@
       <Partitions />
     </MeasureGroup>
   </MeasureGroups>
-  <Source dwd:design-time-name="454533ac-1b3c-4802-9a64-493f974ce582">
+  <Source dwd:design-time-name="90a6c228-7ec9-4e51-b8b8-4e182a2478f5">
     <DataSourceViewID>Film DB</DataSourceViewID>
   </Source>
 </Cube>

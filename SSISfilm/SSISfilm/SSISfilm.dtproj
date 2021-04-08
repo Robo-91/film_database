@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">LAPTOP-9TKNNVCM</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAHvRa9E6vhk2WXmsdnozn5gAAAAACAAAAAAAQZgAAAAEAACAAAAA4sF4ihCu22+VBtU5p48c9ibkz9nSDJCHZt0iggK00YgAAAAAOgAAAAAIAACAAAAD2kScMOUaCaBpebuDn6Fbj9VNdRRQET375Cw1EUL0DAZAAAADQXiXIriDm4Hpq+UexBWAryuZuKfVEdmjCtdsl5WRY6FbHFRTgQJR+RDDHfbLxyYnIKwDD6cTbUMQ7ndISb2rdkrtS3Tqtpc9J7/YPzZrTDWsbRcx6io8mBiijZr67G8prUBvPqDXtVFQHzRMsDi7/TgGsCu7/VjimK5IjE9bjh+YPsz4SBh9IlTlseRcHjWxAAAAAGiygfHiASLXZsSnXdmKy81cABik/uu1R3vr+8abI9xNVTZLE5oFz+jISebCOsujtateuCdnurVujRJcifW7ZcQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAjo8nbYFS80amQpe5NM0VgAAAAAACAAAAAAAQZgAAAAEAACAAAACffsrbvxqrIcDhxXN7KCKWt6G312pi8WCnARcGwqRcLwAAAAAOgAAAAAIAACAAAABMG/RYKA3MU6XdEil/67zqavq2RYAQZmk7hyITVW4ZSpAAAACvFjWxMaTvHowaoGf1pqf+/KBNgGkjOSls8b5kDGZxvdxIV0G4EvEQFhhBJN2aZ1hksaORfgcbVWvEW6S3OwZqpbDPyMQ4GzS0DTmPFiZM5yUyF6IIX5/4xsW8r8MDFKZ/N7cmXXqfWSXlBJ7PBqqlYd0X/C2HMCY1tYd9Zw8jMid4vo3g9J4ixymNrjl/7NNAAAAA8//D4zXmjwgfULHh4UdgURfnC8sFtJCnpXsCdw5dnAUPtyVTWQ26QbUy3SrATD8cb3nY1A+gSEC6K/wMkn726w==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -36,6 +36,7 @@
           <SSIS:Package SSIS:Name="Director.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Year.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="FactFilm.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="FilmTitle.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="LAPTOP-9TKNNVCM_LEARNINGSERVER.film_DB.conmgr" />
@@ -187,7 +188,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\r91pa\Desktop\PersonalProjects\filmtv_movies_project.xls;Extended Properties="Excel 8.0;HDR=YES";</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\r91pa\Desktop\PersonalProjects\filmtv_movies_project.xls;Extended Properties="EXCEL 8.0;HDR=YES";</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -569,10 +570,10 @@
                 <SSIS:Property SSIS:Name="Name">Main</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">7</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3EE4B27F-1D63-488F-938E-3A8765F6CDD5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5404C456-9DC3-4764-A0D2-D7FA36D366C8}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -770,10 +771,27 @@
                 <SSIS:Property SSIS:Name="Name">FactFilm</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">24</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{165A4820-E589-445D-9DB5-09CE4491FD4D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{AC993386-5BBA-4125-A1E8-45843257A634}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="FilmTitle.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{D0FF49BD-5ECC-459D-A52C-9A2E7D5E5770}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">FilmTitle</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">13</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{E26A5D58-D29A-4BB8-A455-A2DAD0E3F101}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

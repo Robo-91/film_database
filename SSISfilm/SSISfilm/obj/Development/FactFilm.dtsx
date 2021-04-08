@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactFilm"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{1E307440-DA8A-4197-AA82-CC3A5BC94599}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{C7A52A28-753F-4CF2-ACF6-F28CEF3C3B2D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -425,14 +425,6 @@
                       externalMetadataColumnId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].ExternalColumns[filmtv_id]"
                       lineageId="Package\Fact Film Task\Convert Data Values.Outputs[Data Conversion Output].Columns[intFilmtv_id]" />
                     <inputColumn
-                      refId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].Columns[strTitle]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="strTitle"
-                      externalMetadataColumnId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].ExternalColumns[title]"
-                      lineageId="Package\Fact Film Task\Convert Data Values.Outputs[Data Conversion Output].Columns[strTitle]" />
-                    <inputColumn
                       refId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].Columns[year_id]"
                       cachedDataType="i4"
                       cachedName="year_id"
@@ -482,6 +474,12 @@
                       cachedName="intVotes"
                       externalMetadataColumnId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].ExternalColumns[votes]"
                       lineageId="Package\Fact Film Task\Convert Data Values.Outputs[Data Conversion Output].Columns[intVotes]" />
+                    <inputColumn
+                      refId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].Columns[film_id]"
+                      cachedDataType="i4"
+                      cachedName="film_id"
+                      externalMetadataColumnId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].ExternalColumns[title]"
+                      lineageId="Package\Fact Film Task\Lookup Title.Outputs[Lookup Match Output].Columns[film_id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -491,9 +489,7 @@
                       name="filmtv_id" />
                     <externalMetadataColumn
                       refId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].ExternalColumns[title]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
+                      dataType="i4"
                       name="title" />
                     <externalMetadataColumn
                       refId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].ExternalColumns[year]"
@@ -1323,6 +1319,166 @@ where [refTable].[genre_name] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\Fact Film Task\Lookup Title"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Title"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimTitle]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimTitle]) [refTable]
+where [refTable].[film_name] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="film_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="film_name" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Fact Film Task\Convert Data Values.Outputs[Data Conversion Output].Columns[strTitle]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Fact Film Task\Lookup Title.Connections[OleDbConnection]"
+                  connectionManagerID="{CB85184D-07BE-45EB-A834-A60CF9AC679B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-9TKNNVCM_LEARNINGSERVER.film_DB]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Fact Film Task\Lookup Title.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Fact Film Task\Lookup Title.Inputs[Lookup Input].Columns[strTitle]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="strTitle"
+                      lineageId="Package\Fact Film Task\Convert Data Values.Outputs[Data Conversion Output].Columns[strTitle]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">film_name</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Fact Film Task\Lookup Title.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Fact Film Task\Lookup Title.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact Film Task\Lookup Title.Outputs[Lookup Match Output].Columns[film_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Fact Film Task\Lookup Title.Outputs[Lookup Match Output].Columns[film_id]"
+                      name="film_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">film_id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact Film Task\Lookup Title.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Fact Film Task\Lookup Title.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Fact Film Task\Lookup Title.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Fact Film Task\Lookup Title.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Fact Film Task\Lookup Title.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Fact Film Task\Lookup Title.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Fact Film Task\Lookup Title.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Fact Film Task\Lookup Title.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Fact Film Task\Lookup Year"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -1591,6 +1747,31 @@ where [refTable].[year_no] = ?</property>
                           name="FriendlyExpression">REPLACENULL(intYear,0)</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Fact Film Task\Match Replaced Null Values.Inputs[Derived Column Input].Columns[strTitle]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="strTitle"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Fact Film Task\Convert Data Values.Outputs[Data Conversion Output].Columns[strTitle]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACENULL](#{Package\Fact Film Task\Convert Data Values.Outputs[Data Conversion Output].Columns[strTitle]},"Unknown")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACENULL(strTitle,"Unknown")</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1779,7 +1960,7 @@ where [refTable].[filmtv_id] = ?</property>
               startId="Package\Fact Film Task\Convert Data Values.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Fact Film Task.Paths[Derived Column Output]"
-              endId="Package\Fact Film Task\Lookup Country.Inputs[Lookup Input]"
+              endId="Package\Fact Film Task\Lookup Title.Inputs[Lookup Input]"
               name="Derived Column Output"
               startId="Package\Fact Film Task\Match Replaced Null Values.Outputs[Derived Column Output]" />
             <path
@@ -1807,6 +1988,11 @@ where [refTable].[filmtv_id] = ?</property>
               endId="Package\Fact Film Task\Only Allow New Records.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Fact Film Task\Lookup Year.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Fact Film Task.Paths[Lookup Match Output4]"
+              endId="Package\Fact Film Task\Lookup Country.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Fact Film Task\Lookup Title.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Fact Film Task.Paths[Lookup No Match Output]"
               endId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input]"
@@ -1842,61 +2028,17 @@ where [refTable].[filmtv_id] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="157,42"
-          Id="Package\Fact Film Task\Fact Film Source"
-          TopLeft="90,15" />
+          Size="145,42"
+          Id="Package\Fact Film Task\Lookup Genre"
+          TopLeft="83,400" />
         <NodeLayout
-          Size="175,42"
-          Id="Package\Fact Film Task\Convert Data Values"
-          TopLeft="84,104" />
-        <EdgeLayout
-          Id="Package\Fact Film Task.Paths[Excel Source Output]"
-          TopLeft="170,57">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47"
-              Start="0,0"
-              End="0,39.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="178,42"
+          Id="Package\Fact Film Task\Fact Film Destination"
+          TopLeft="102,645" />
         <NodeLayout
           Size="209,42"
           Id="Package\Fact Film Task\Match Replaced Null Values"
           TopLeft="61,181" />
-        <EdgeLayout
-          Id="Package\Fact Film Task.Paths[Data Conversion Output]"
-          TopLeft="168.5,146">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35"
-              Start="0,0"
-              End="0,27.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="153,42"
           Id="Package\Fact Film Task\Lookup Country"
@@ -1906,80 +2048,130 @@ where [refTable].[filmtv_id] = ?</property>
           Id="Package\Fact Film Task\Lookup Director"
           TopLeft="83,328" />
         <NodeLayout
-          Size="145,42"
-          Id="Package\Fact Film Task\Lookup Genre"
-          TopLeft="83,400" />
-        <NodeLayout
           Size="138,42"
           Id="Package\Fact Film Task\Lookup Year"
           TopLeft="97,475" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Fact Film Task\Only Allow New Records"
+          TopLeft="55,558" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Fact Film Task\Convert Data Values"
+          TopLeft="84,104" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Fact Film Task\Lookup Title"
+          TopLeft="401,241" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Fact Film Task\Fact Film Source"
+          TopLeft="90,15" />
         <EdgeLayout
-          Id="Package\Fact Film Task.Paths[Derived Column Output]"
-          TopLeft="165,223">
+          Id="Package\Fact Film Task.Paths[Lookup No Match Output]"
+          TopLeft="151.5,600">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33"
+              EndConnector="39.5,45"
               Start="0,0"
-              End="0,25.5">
+              End="39.5,37.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fact Film Task.Paths[Lookup Match Output]"
-          TopLeft="162.25,298">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30"
-              Start="0,0"
-              End="0,22.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
                   <mssgle:LineSegment
-                    End="0,22.5" />
+                    End="35.5,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="35.5,22.5"
+                    Point2="39.5,22.5"
+                    Point3="39.5,26.5" />
+                  <mssgle:LineSegment
+                    End="39.5,37.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,5.4453125,96.3827734375,11.609375"
+              BoundingBox="-36.05638671875,27.5,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fact Film Task.Paths[Lookup Match Output1]"
-          TopLeft="157.75,370">
+          Id="Package\Fact Film Task.Paths[Lookup Match Output4]"
+          TopLeft="401,267.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30"
+              EndConnector="-160,9.33333333333331"
               Start="0,0"
-              End="0,22.5">
+              End="-152.5,9.33333333333331">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.5" />
+                    End="-63.5229357798165,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-63.5229357798165,0"
+                    Point2="-67.5229357798165,0"
+                    Point3="-67.5229357798165,4" />
+                  <mssgle:LineSegment
+                    End="-67.5229357798165,5.33333333333331" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-67.5229357798165,5.33333333333331"
+                    Point2="-67.5229357798165,9.33333333333331"
+                    Point3="-71.5229357798165,9.33333333333331" />
+                  <mssgle:LineSegment
+                    End="-152.5,9.33333333333331" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,5.4453125,96.3827734375,11.609375"
+              BoundingBox="-115.714322498567,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact Film Task.Paths[Lookup Match Output3]"
+          TopLeft="166,517">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14.5,41"
+              Start="0,0"
+              End="-14.5,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5"
+                    Point2="0,20.5"
+                    Point3="-4,20.5" />
+                  <mssgle:LineSegment
+                    End="-10.5,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.5,20.5"
+                    Point2="-14.5,20.5"
+                    Point3="-14.5,24.5" />
+                  <mssgle:LineSegment
+                    End="-14.5,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.44138671875,25.5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2019,91 +2211,162 @@ where [refTable].[filmtv_id] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="193,42"
-          Id="Package\Fact Film Task\Only Allow New Records"
-          TopLeft="55,558" />
         <EdgeLayout
-          Id="Package\Fact Film Task.Paths[Lookup Match Output3]"
-          TopLeft="166,517">
+          Id="Package\Fact Film Task.Paths[Lookup Match Output1]"
+          TopLeft="157.75,370">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-14.5,41"
+              EndConnector="0,30"
               Start="0,0"
-              End="-14.5,33.5">
+              End="0,22.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.5"
-                    Point2="0,20.5"
-                    Point3="-4,20.5" />
-                  <mssgle:LineSegment
-                    End="-10.5,20.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-10.5,20.5"
-                    Point2="-14.5,20.5"
-                    Point3="-14.5,24.5" />
-                  <mssgle:LineSegment
-                    End="-14.5,33.5" />
+                    End="0,22.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.44138671875,25.5,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,5.4453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="178,42"
-          Id="Package\Fact Film Task\Fact Film Destination"
-          TopLeft="102,645" />
         <EdgeLayout
-          Id="Package\Fact Film Task.Paths[Lookup No Match Output]"
-          TopLeft="151.5,600">
+          Id="Package\Fact Film Task.Paths[Lookup Match Output]"
+          TopLeft="162.25,298">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="39.5,45"
+              EndConnector="0,30"
               Start="0,0"
-              End="39.5,37.5">
+              End="0,22.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="4,22.5" />
-                  <mssgle:LineSegment
-                    End="35.5,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="35.5,22.5"
-                    Point2="39.5,22.5"
-                    Point3="39.5,26.5" />
-                  <mssgle:LineSegment
-                    End="39.5,37.5" />
+                    End="0,22.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-36.05638671875,27.5,111.6127734375,11.609375"
+              BoundingBox="-48.19138671875,5.4453125,96.3827734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact Film Task.Paths[Excel Source Output]"
+          TopLeft="170,57">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,11.75,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact Film Task.Paths[Derived Column Output]"
+          TopLeft="270,202">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="131,60"
+              Start="0,0"
+              End="123.5,60">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="61.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="61.5,0"
+                    Point2="65.5,0"
+                    Point3="65.5,4" />
+                  <mssgle:LineSegment
+                    End="65.5,56" />
+                  <mssgle:CubicBezierSegment
+                    Point1="65.5,56"
+                    Point2="65.5,60"
+                    Point3="69.5,60" />
+                  <mssgle:LineSegment
+                    End="123.5,60" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact Film Task.Paths[Data Conversion Output]"
+          TopLeft="168.5,146">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Fact Film Task\Fact Film Source">
+    design-time-name="Package\Fact Film Task\Lookup Genre">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimGenre]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact Film Task\Fact Film Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2121,7 +2384,7 @@ where [refTable].[filmtv_id] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2131,7 +2394,7 @@ where [refTable].[filmtv_id] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2144,7 +2407,7 @@ where [refTable].[filmtv_id] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2154,30 +2417,7 @@ where [refTable].[filmtv_id] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Fact Film Task\Lookup Genre">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimGenre]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2190,7 +2430,7 @@ where [refTable].[filmtv_id] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2200,7 +2440,7 @@ where [refTable].[filmtv_id] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2213,12 +2453,35 @@ where [refTable].[filmtv_id] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[fact_Film]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Fact Film Task\Lookup Title">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimTitle]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -2231,7 +2494,7 @@ where [refTable].[filmtv_id] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Fact Film Task\Fact Film Destination">
+    design-time-name="Package\Fact Film Task\Fact Film Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

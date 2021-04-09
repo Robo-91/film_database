@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactFilm"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{C7A52A28-753F-4CF2-ACF6-F28CEF3C3B2D}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{F7AF1CB3-DB15-44CB-B973-4D3A289FB417}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -2030,285 +2030,213 @@ where [refTable].[filmtv_id] = ?</property>
         <NodeLayout
           Size="145,42"
           Id="Package\Fact Film Task\Lookup Genre"
-          TopLeft="83,400" />
+          TopLeft="310,254" />
         <NodeLayout
           Size="178,42"
           Id="Package\Fact Film Task\Fact Film Destination"
-          TopLeft="102,645" />
+          TopLeft="302,323" />
         <NodeLayout
           Size="209,42"
           Id="Package\Fact Film Task\Match Replaced Null Values"
-          TopLeft="61,181" />
+          TopLeft="262,107" />
         <NodeLayout
           Size="153,42"
           Id="Package\Fact Film Task\Lookup Country"
-          TopLeft="88,256" />
+          TopLeft="81,185" />
         <NodeLayout
           Size="154,42"
           Id="Package\Fact Film Task\Lookup Director"
-          TopLeft="83,328" />
+          TopLeft="290,182" />
         <NodeLayout
           Size="138,42"
           Id="Package\Fact Film Task\Lookup Year"
-          TopLeft="97,475" />
+          TopLeft="100,255" />
         <NodeLayout
           Size="193,42"
           Id="Package\Fact Film Task\Only Allow New Records"
-          TopLeft="55,558" />
+          TopLeft="88,329" />
         <NodeLayout
           Size="175,42"
           Id="Package\Fact Film Task\Convert Data Values"
-          TopLeft="84,104" />
+          TopLeft="264,38" />
         <NodeLayout
           Size="137,42"
           Id="Package\Fact Film Task\Lookup Title"
-          TopLeft="401,241" />
+          TopLeft="92,104" />
         <NodeLayout
           Size="157,42"
           Id="Package\Fact Film Task\Fact Film Source"
-          TopLeft="90,15" />
-        <EdgeLayout
-          Id="Package\Fact Film Task.Paths[Lookup No Match Output]"
-          TopLeft="151.5,600">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="39.5,45"
-              Start="0,0"
-              End="39.5,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="4,22.5" />
-                  <mssgle:LineSegment
-                    End="35.5,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="35.5,22.5"
-                    Point2="39.5,22.5"
-                    Point3="39.5,26.5" />
-                  <mssgle:LineSegment
-                    End="39.5,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-36.05638671875,27.5,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Fact Film Task.Paths[Lookup Match Output4]"
-          TopLeft="401,267.666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-160,9.33333333333331"
-              Start="0,0"
-              End="-152.5,9.33333333333331">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-63.5229357798165,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-63.5229357798165,0"
-                    Point2="-67.5229357798165,0"
-                    Point3="-67.5229357798165,4" />
-                  <mssgle:LineSegment
-                    End="-67.5229357798165,5.33333333333331" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-67.5229357798165,5.33333333333331"
-                    Point2="-67.5229357798165,9.33333333333331"
-                    Point3="-71.5229357798165,9.33333333333331" />
-                  <mssgle:LineSegment
-                    End="-152.5,9.33333333333331" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-115.714322498567,-17.609375,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="90,28" />
         <EdgeLayout
           Id="Package\Fact Film Task.Paths[Lookup Match Output3]"
-          TopLeft="166,517">
+          TopLeft="169,297">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-14.5,41"
+              EndConnector="15.5,32"
               Start="0,0"
-              End="-14.5,33.5">
+              End="15.5,24.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.5" />
+                    End="0,12" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.5"
-                    Point2="0,20.5"
-                    Point3="-4,20.5" />
+                    Point1="0,12"
+                    Point2="0,16"
+                    Point3="4,16" />
                   <mssgle:LineSegment
-                    End="-10.5,20.5" />
+                    End="11.5,16" />
                   <mssgle:CubicBezierSegment
-                    Point1="-10.5,20.5"
-                    Point2="-14.5,20.5"
-                    Point3="-14.5,24.5" />
+                    Point1="11.5,16"
+                    Point2="15.5,16"
+                    Point3="15.5,20" />
                   <mssgle:LineSegment
-                    End="-14.5,33.5" />
+                    End="15.5,24.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.44138671875,25.5,96.3827734375,11.609375"
+              BoundingBox="-40.44138671875,21,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact Film Task.Paths[Lookup Match Output2]"
-          TopLeft="155.5,442">
+          TopLeft="310,275.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="10.5,33"
+              EndConnector="-72,0"
               Start="0,0"
-              End="10.5,25.5">
+              End="-64.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.5"
-                    Point2="0,16.5"
-                    Point3="4,16.5" />
-                  <mssgle:LineSegment
-                    End="6.5,16.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="6.5,16.5"
-                    Point2="10.5,16.5"
-                    Point3="10.5,20.5" />
-                  <mssgle:LineSegment
-                    End="10.5,25.5" />
+                    End="-64.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-42.94138671875,21.5,96.3827734375,11.609375"
+              BoundingBox="-80.44138671875,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact Film Task.Paths[Lookup Match Output1]"
-          TopLeft="157.75,370">
+          TopLeft="367,224">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30"
+              EndConnector="15.5,30"
               Start="0,0"
-              End="0,22.5">
+              End="15.5,22.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.5" />
+                    End="0,11" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11"
+                    Point2="0,15"
+                    Point3="4,15" />
+                  <mssgle:LineSegment
+                    End="11.5,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.5,15"
+                    Point2="15.5,15"
+                    Point3="15.5,19" />
+                  <mssgle:LineSegment
+                    End="15.5,22.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,5.4453125,96.3827734375,11.609375"
+              BoundingBox="-40.44138671875,20,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact Film Task.Paths[Lookup Match Output]"
-          TopLeft="162.25,298">
+          TopLeft="234,204.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30"
+              EndConnector="56,0"
               Start="0,0"
-              End="0,22.5">
+              End="48.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.5" />
+                    End="48.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,5.4453125,96.3827734375,11.609375"
+              BoundingBox="-23.94138671875,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact Film Task.Paths[Excel Source Output]"
-          TopLeft="170,57">
+          TopLeft="168.5,28">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47"
+              EndConnector="183,10"
               Start="0,0"
-              End="0,39.5">
+              End="183,2.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.5" />
+                    End="0,-18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-18.5"
+                    Point2="0,-22.5"
+                    Point3="4,-22.5" />
+                  <mssgle:LineSegment
+                    End="179,-22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="179,-22.5"
+                    Point2="183,-22.5"
+                    Point3="183,-18.5" />
+                  <mssgle:LineSegment
+                    End="183,2.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-8,11.75,16,16"
+              BoundingBox="83.5,-17.5,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact Film Task.Paths[Derived Column Output]"
-          TopLeft="270,202">
+          TopLeft="262,126.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="131,60"
+              EndConnector="-33,0"
               Start="0,0"
-              End="123.5,60">
+              End="-25.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="61.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="61.5,0"
-                    Point2="65.5,0"
-                    Point3="65.5,4" />
-                  <mssgle:LineSegment
-                    End="65.5,56" />
-                  <mssgle:CubicBezierSegment
-                    Point1="65.5,56"
-                    Point2="65.5,60"
-                    Point3="69.5,60" />
-                  <mssgle:LineSegment
-                    End="123.5,60" />
+                    End="-25.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2319,24 +2247,96 @@ where [refTable].[filmtv_id] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Fact Film Task.Paths[Data Conversion Output]"
-          TopLeft="168.5,146">
+          TopLeft="351.5,80">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35"
+              EndConnector="15,27"
               Start="0,0"
-              End="0,27.5">
+              End="15,19.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.5" />
+                    End="0,9.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.5"
+                    Point2="0,13.5"
+                    Point3="4,13.5" />
+                  <mssgle:LineSegment
+                    End="11,13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11,13.5"
+                    Point2="15,13.5"
+                    Point3="15,17.5" />
+                  <mssgle:LineSegment
+                    End="15,19.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact Film Task.Paths[Lookup No Match Output]"
+          TopLeft="184.5,371">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="206.5,-6"
+              Start="0,0"
+              End="206.5,1.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="202.5,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="202.5,22.5"
+                    Point2="206.5,22.5"
+                    Point3="206.5,18.5" />
+                  <mssgle:LineSegment
+                    End="206.5,1.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="47.44361328125,27.5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Fact Film Task.Paths[Lookup Match Output4]"
+          TopLeft="159,146">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,9.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2476,7 +2476,7 @@ where [refTable].[filmtv_id] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -2486,7 +2486,7 @@ where [refTable].[filmtv_id] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

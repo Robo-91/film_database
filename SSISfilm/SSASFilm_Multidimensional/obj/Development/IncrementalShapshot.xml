@@ -68,7 +68,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>TwtaHW+x0t/DHLwNOuol7D/dj64=4/12/2021 4:45:11 PM4/12/2021 3:16:15 PMVLgK005Z7nslyQNU7EGPxwoIOIA=4/12/2021 4:38:58 PM4/12/2021 3:16:15 PM</TimeStamp>
+        <TimeStamp>NWH8Ird8HLKSKrN232Hw8dipDmY=4/15/2021 3:04:30 PM4/12/2021 3:16:15 PMVLgK005Z7nslyQNU7EGPxwoIOIA=4/12/2021 4:38:58 PM4/12/2021 3:16:15 PM</TimeStamp>
         <ID>
           <String>Film_Cube</String>
         </ID>
@@ -85,5 +85,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2021-04-12T21:45:24.053333Z</LastDeployed>
+  <LastDeployed>2021-04-15T20:05:00.37Z</LastDeployed>
 </DeploymentSnapshot>

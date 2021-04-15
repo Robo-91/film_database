@@ -1108,6 +1108,23 @@ VISIBLE = 1  ; </Text>
           </Commands>
         </MdxScript>
       </MdxScripts>
+      <Kpis>
+        <Kpi>
+          <ID>KPI</ID>
+          <Name>KPI_AboveAverage</Name>
+          <Value>[Measures].[Avg_ByCategory]</Value>
+          <Goal>[Measures].[Avg_ByCategory] * 1.1</Goal>
+          <Status>case
+  when([Measures].[Avg_ByCategory]&gt;5.5)
+    then 1
+  when([Measures].[Avg_ByCategory]&lt;5.37)
+    then -1
+  else 0
+end</Status>
+          <TrendGraphic>Standard Arrow</TrendGraphic>
+          <StatusGraphic>Gauge - Ascending</StatusGraphic>
+        </Kpi>
+      </Kpis>
     </Cube>
   </Cubes>
   <DataSources>

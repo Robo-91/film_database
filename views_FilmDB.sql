@@ -17,6 +17,7 @@ select  genre_name as [Genre],
 		cast(round(avg(avg_vote),2)as decimal(4,2)) as [Average Rating]
 	from DimGenre
 	join fact_Film on DimGenre.genre_id = fact_Film.genre
+	join DimTitle on DimTitle.film_id = fact_Film.title
 	group by genre_name;
 
 create view v_Country
@@ -27,6 +28,7 @@ select	country_name as [Name of Country],
 		cast(round(avg(avg_vote),2)as decimal(4,2)) as [Average Rating]
 	from DimCountry
 	join fact_Film on DimCountry.country_id = fact_Film.country
+	join DimTitle on DimTitle.film_id = fact_Film.title
 	group by country_name;
 		
 create view v_Year
@@ -37,6 +39,7 @@ select	year_no as [Year],
 		cast(round(avg(avg_vote),2)as decimal(4,2)) as [Average Rating]
 	from DimYear
 	join fact_Film on DimYear.year_id = fact_Film.year
+	join DimTitle on DimTitle.film_id = fact_Film.title
 	group by year_no;
 
 create view v_Movie_Info
@@ -51,6 +54,7 @@ select	title as [Film Title],
 		cast(avg_vote as decimal(4,2)) as [Average Vote],
 		votes as [Total Votes]
 	from fact_Film
+	join DimTitle on DimTitle.film_id = fact_Film.title
 	join DimYear on fact_Film.year = DimYear.year_id
 	join DimGenre on fact_Film.genre = DimGenre.genre_id
 	join DimCountry on fact_Film.country = DimCountry.country_id

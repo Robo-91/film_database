@@ -6,6 +6,7 @@ select director_name as [Director Name],
 	   sum(votes) as [Total Votes]
 	from DimDirector
 	join fact_Film on DimDirector.director_id = fact_Film.director
+	join DimTitle on DimTitle.film_id = fact_Film.title
 	group by director_name;
 
 create view v_Genre

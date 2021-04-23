@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Genre"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{FC506C80-5068-4D3D-BC41-854A91A08771}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{7263FB4A-286B-45D8-AC12-BA487DA33C39}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -24,6 +24,16 @@
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\r91pa\Desktop\PersonalProjects\filmtv_movies_project.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Genre Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{1C0DFAE5-9581-4AA2-8DB9-FF804FFD925C}"
+      DTS:ObjectName="Genre Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\r91pa\Desktop\film_database\filmtv_movies_project.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -296,8 +306,8 @@
               <connections>
                 <connection
                   refId="Package\Genre Source Task\Genre Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[Genre Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Genre Connection Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -788,57 +798,9 @@ where [refTable].[genre_name] = ?</property>
           Id="Package\Genre Source Task\Genre Source"
           TopLeft="186.083333333333,32" />
         <NodeLayout
-          Size="187,42"
-          Id="Package\Genre Source Task\Convert Unicode String"
-          TopLeft="164.083333333333,119" />
-        <EdgeLayout
-          Id="Package\Genre Source Task.Paths[Excel Source Output]"
-          TopLeft="257.583333333333,74">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45"
-              Start="0,0"
-              End="0,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="212,42"
-          Id="Package\Genre Source Task\Sort and Remove Duplicates"
-          TopLeft="151.583333333333,194" />
-        <EdgeLayout
-          Id="Package\Genre Source Task.Paths[Data Conversion Output]"
-          TopLeft="257.583333333333,161">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33"
-              Start="0,0"
-              End="0,25.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="166,42"
+          Id="Package\Genre Source Task\Replace Null Value"
+          TopLeft="180.583333333333,264" />
         <NodeLayout
           Size="182,42"
           Id="Package\Genre Source Task\DimGenre Destination"
@@ -847,6 +809,36 @@ where [refTable].[genre_name] = ?</property>
           Size="126,42"
           Id="Package\Genre Source Task\Lookup Id"
           TopLeft="201.083333333333,336" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\Genre Source Task\Sort and Remove Duplicates"
+          TopLeft="151.583333333333,194" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Genre Source Task\Convert Unicode String"
+          TopLeft="164.083333333333,119" />
+        <EdgeLayout
+          Id="Package\Genre Source Task.Paths[Sort Output]"
+          TopLeft="260.583333333333,236">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Genre Source Task.Paths[Lookup No Match Output]"
           TopLeft="260.833333333333,378">
@@ -871,24 +863,20 @@ where [refTable].[genre_name] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Genre Source Task\Replace Null Value"
-          TopLeft="180.583333333333,264" />
         <EdgeLayout
-          Id="Package\Genre Source Task.Paths[Sort Output]"
-          TopLeft="260.583333333333,236">
+          Id="Package\Genre Source Task.Paths[Excel Source Output]"
+          TopLeft="257.583333333333,74">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,28"
+              EndConnector="0,45"
               Start="0,0"
-              End="0,20.5">
+              End="0,37.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.5" />
+                    End="0,37.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -911,6 +899,28 @@ where [refTable].[genre_name] = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Genre Source Task.Paths[Data Conversion Output]"
+          TopLeft="257.583333333333,161">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

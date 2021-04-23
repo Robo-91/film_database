@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FilmTitle"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{E26A5D58-D29A-4BB8-A455-A2DAD0E3F101}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{D70493EB-B5E5-4E21-B323-3027F3E90BC6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -762,93 +762,63 @@ where [refTable].[film_name] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="142,42"
+          Id="Package\Load Film Titles\Replace Nulls"
+          TopLeft="474,301" />
+        <NodeLayout
           Size="134,42"
           Id="Package\Load Film Titles\Film Source"
           TopLeft="198,46" />
-        <NodeLayout
-          Size="176,42"
-          Id="Package\Load Film Titles\Convert String Value"
-          TopLeft="162,149" />
-        <EdgeLayout
-          Id="Package\Load Film Titles.Paths[Excel Source Output]"
-          TopLeft="265,88">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-15,61"
-              Start="0,0"
-              End="-15,53.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.5"
-                    Point2="0,30.5"
-                    Point3="-4,30.5" />
-                  <mssgle:LineSegment
-                    End="-11,30.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-11,30.5"
-                    Point2="-15,30.5"
-                    Point3="-15,34.5" />
-                  <mssgle:LineSegment
-                    End="-15,53.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="212,42"
-          Id="Package\Load Film Titles\Sort and Remove Duplicates"
-          TopLeft="187,244" />
-        <EdgeLayout
-          Id="Package\Load Film Titles.Paths[Data Conversion Output]"
-          TopLeft="250,191">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="43,53"
-              Start="0,0"
-              End="43,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22.5"
-                    Point2="0,26.5"
-                    Point3="4,26.5" />
-                  <mssgle:LineSegment
-                    End="39,26.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="39,26.5"
-                    Point2="43,26.5"
-                    Point3="43,30.5" />
-                  <mssgle:LineSegment
-                    End="43,45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="177,42"
           Id="Package\Load Film Titles\Insert Unique Values"
           TopLeft="214,339" />
         <NodeLayout
+          Size="212,42"
+          Id="Package\Load Film Titles\Sort and Remove Duplicates"
+          TopLeft="187,244" />
+        <NodeLayout
           Size="184,42"
           Id="Package\Load Film Titles\Film Table Destination"
           TopLeft="245,439" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Load Film Titles\Convert String Value"
+          TopLeft="162,149" />
+        <EdgeLayout
+          Id="Package\Load Film Titles.Paths[Sort Output]"
+          TopLeft="399,265">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="75,57"
+              Start="0,0"
+              End="67.5,57">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="33.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="33.5,0"
+                    Point2="37.5,0"
+                    Point3="37.5,4" />
+                  <mssgle:LineSegment
+                    End="37.5,53" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37.5,53"
+                    Point2="37.5,57"
+                    Point3="41.5,57" />
+                  <mssgle:LineSegment
+                    End="67.5,57" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Film Titles.Paths[Lookup No Match Output]"
           TopLeft="302.5,381">
@@ -885,36 +855,32 @@ where [refTable].[film_name] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="142,42"
-          Id="Package\Load Film Titles\Replace Nulls"
-          TopLeft="474,301" />
         <EdgeLayout
-          Id="Package\Load Film Titles.Paths[Sort Output]"
-          TopLeft="399,265">
+          Id="Package\Load Film Titles.Paths[Excel Source Output]"
+          TopLeft="265,88">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="75,57"
+              EndConnector="-15,61"
               Start="0,0"
-              End="67.5,57">
+              End="-15,53.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="33.5,0" />
+                    End="0,26.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="33.5,0"
-                    Point2="37.5,0"
-                    Point3="37.5,4" />
+                    Point1="0,26.5"
+                    Point2="0,30.5"
+                    Point3="-4,30.5" />
                   <mssgle:LineSegment
-                    End="37.5,53" />
+                    End="-11,30.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="37.5,53"
-                    Point2="37.5,57"
-                    Point3="41.5,57" />
+                    Point1="-11,30.5"
+                    Point2="-15,30.5"
+                    Point3="-15,34.5" />
                   <mssgle:LineSegment
-                    End="67.5,57" />
+                    End="-15,53.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -957,6 +923,40 @@ where [refTable].[film_name] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Film Titles.Paths[Data Conversion Output]"
+          TopLeft="250,191">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="43,53"
+              Start="0,0"
+              End="43,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="4,26.5" />
+                  <mssgle:LineSegment
+                    End="39,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="39,26.5"
+                    Point2="43,26.5"
+                    Point3="43,30.5" />
+                  <mssgle:LineSegment
+                    End="43,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -979,7 +979,7 @@ where [refTable].[film_name] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -989,7 +989,7 @@ where [refTable].[film_name] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

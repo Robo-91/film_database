@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FactFilm"
   DTS:PackageType="5"
-  DTS:VersionBuild="28"
-  DTS:VersionGUID="{F7AF1CB3-DB15-44CB-B973-4D3A289FB417}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{BAD55D92-951B-4463-8FFE-B8F845000752}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -138,6 +138,7 @@
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Fact Film Task\Convert Data Values.Outputs[Data Conversion Output].Columns[decAvg_vote]"
                       name="decAvg_vote"
+                      scale="2"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -466,6 +467,7 @@
                       refId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].Columns[decAvg_vote]"
                       cachedDataType="decimal"
                       cachedName="decAvg_vote"
+                      cachedScale="2"
                       externalMetadataColumnId="Package\Fact Film Task\Fact Film Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_vote]"
                       lineageId="Package\Fact Film Task\Convert Data Values.Outputs[Data Conversion Output].Columns[decAvg_vote]" />
                     <inputColumn

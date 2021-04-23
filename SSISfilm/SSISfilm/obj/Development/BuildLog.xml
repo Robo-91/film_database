@@ -2,43 +2,48 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>SSISfilm</Name>
-    <LastWriteTime>2021-04-08T21:02:59.582047Z</LastWriteTime>
+    <LastWriteTime>2021-04-23T19:36:55.1325017Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>Genre.dtsx</Name>
-      <LastWriteTime>2021-03-19T14:00:44.9695198Z</LastWriteTime>
+      <LastWriteTime>2021-04-23T19:36:53.0540207Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Main.dtsx</Name>
-      <LastWriteTime>2021-04-08T21:22:37.1827923Z</LastWriteTime>
+      <LastWriteTime>2021-04-23T19:29:53.5963481Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Country.dtsx</Name>
-      <LastWriteTime>2021-03-19T14:17:54.0953287Z</LastWriteTime>
+      <LastWriteTime>2021-04-23T19:35:29.1396098Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Director.dtsx</Name>
-      <LastWriteTime>2021-03-19T14:30:04.8383018Z</LastWriteTime>
+      <LastWriteTime>2021-04-23T19:35:07.2583675Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Year.dtsx</Name>
-      <LastWriteTime>2021-03-19T14:39:10.1265716Z</LastWriteTime>
+      <LastWriteTime>2021-04-23T19:33:21.7386026Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>FactFilm.dtsx</Name>
-      <LastWriteTime>2021-04-08T22:02:07.2425904Z</LastWriteTime>
+      <LastWriteTime>2021-04-23T19:39:12.9825246Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>FilmTitle.dtsx</Name>
-      <LastWriteTime>2021-04-08T21:00:06.3255175Z</LastWriteTime>
+      <LastWriteTime>2021-04-23T19:32:43.7171805Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Process_Film_Cube.dtsx</Name>
+      <LastWriteTime>2021-04-23T19:29:17.5771582Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

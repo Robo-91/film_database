@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Director"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{ABC2A6C4-3DE1-40A2-ABEF-5B76C464FE7C}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{FBD45520-C599-4677-A2B7-35DA2D30DE8A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -766,85 +766,25 @@ where [refTable].[director_name] = ?</property>
           Id="Package\DimDirector Task\DimDirector Source"
           TopLeft="88,0" />
         <NodeLayout
-          Size="172,42"
-          Id="Package\DimDirector Task\Convert String Data"
-          TopLeft="70,79" />
-        <EdgeLayout
-          Id="Package\DimDirector Task.Paths[Excel Source Output]"
-          TopLeft="173,42">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-17,37"
-              Start="0,0"
-              End="-17,29.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.5"
-                    Point2="0,18.5"
-                    Point3="-4,18.5" />
-                  <mssgle:LineSegment
-                    End="-13,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13,18.5"
-                    Point2="-17,18.5"
-                    Point3="-17,22.5" />
-                  <mssgle:LineSegment
-                    End="-17,29.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="142,42"
+          Id="Package\DimDirector Task\Replace Nulls"
+          TopLeft="95,234" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\DimDirector Task\DimDirector Destination"
+          TopLeft="73,421" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\DimDirector Task\Lookup Director Name"
+          TopLeft="58,320" />
         <NodeLayout
           Size="212,42"
           Id="Package\DimDirector Task\Sort and Remove Duplicates"
           TopLeft="58,152" />
-        <EdgeLayout
-          Id="Package\DimDirector Task.Paths[Data Conversion Output]"
-          TopLeft="156,121">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="8,31"
-              Start="0,0"
-              End="8,23.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.5"
-                    Point2="0,15.5"
-                    Point3="4,15.5" />
-                  <mssgle:LineSegment
-                    End="4,15.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4,15.5"
-                    Point2="8,15.5"
-                    Point3="8,19.5" />
-                  <mssgle:LineSegment
-                    End="8,23.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="142,42"
-          Id="Package\DimDirector Task\Replace Nulls"
-          TopLeft="95,234" />
+          Size="172,42"
+          Id="Package\DimDirector Task\Convert String Data"
+          TopLeft="70,79" />
         <EdgeLayout
           Id="Package\DimDirector Task.Paths[Sort Output]"
           TopLeft="165,194">
@@ -867,48 +807,6 @@ where [refTable].[director_name] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="184,42"
-          Id="Package\DimDirector Task\Lookup Director Name"
-          TopLeft="58,320" />
-        <EdgeLayout
-          Id="Package\DimDirector Task.Paths[Derived Column Output]"
-          TopLeft="166,276">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-16,44"
-              Start="0,0"
-              End="-16,36.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18"
-                    Point2="0,22"
-                    Point3="-4,22" />
-                  <mssgle:LineSegment
-                    End="-12,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-12,22"
-                    Point2="-16,22"
-                    Point3="-16,26" />
-                  <mssgle:LineSegment
-                    End="-16,36.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="191,42"
-          Id="Package\DimDirector Task\DimDirector Destination"
-          TopLeft="73,421" />
         <EdgeLayout
           Id="Package\DimDirector Task.Paths[Lookup No Match Output]"
           TopLeft="150,362">
@@ -945,6 +843,108 @@ where [refTable].[director_name] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimDirector Task.Paths[Excel Source Output]"
+          TopLeft="173,42">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17,37"
+              Start="0,0"
+              End="-17,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="-4,18.5" />
+                  <mssgle:LineSegment
+                    End="-13,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13,18.5"
+                    Point2="-17,18.5"
+                    Point3="-17,22.5" />
+                  <mssgle:LineSegment
+                    End="-17,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimDirector Task.Paths[Derived Column Output]"
+          TopLeft="166,276">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-16,44"
+              Start="0,0"
+              End="-16,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18"
+                    Point2="0,22"
+                    Point3="-4,22" />
+                  <mssgle:LineSegment
+                    End="-12,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12,22"
+                    Point2="-16,22"
+                    Point3="-16,26" />
+                  <mssgle:LineSegment
+                    End="-16,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimDirector Task.Paths[Data Conversion Output]"
+          TopLeft="156,121">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8,31"
+              Start="0,0"
+              End="8,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="4,15.5" />
+                  <mssgle:LineSegment
+                    End="4,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4,15.5"
+                    Point2="8,15.5"
+                    Point3="8,19.5" />
+                  <mssgle:LineSegment
+                    End="8,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -962,29 +962,6 @@ where [refTable].[director_name] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DimDirector Task\Lookup Director Name">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimDirector]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\DimDirector Task\DimDirector Destination">
     <Properties>
       <Property>
@@ -994,6 +971,29 @@ where [refTable].[director_name] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimDirector Task\Lookup Director Name">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDirector]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

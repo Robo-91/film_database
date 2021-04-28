@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="FilmTitle"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{D70493EB-B5E5-4E21-B323-3027F3E90BC6}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{590AC62F-67C5-428B-B787-38936ED05C3C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />

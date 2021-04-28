@@ -2,7 +2,7 @@
 
 ## Project Description
 
-The dataset for this project was taken from kaggle.com. This project for learning purposes only. I wanted to utilize some of the transformation components available in Integration Services, build reports in Power Bi using a Multidimensional Model, and create calculations and KPI's in Analysis Services.
+The dataset for this project was taken from kaggle.com. This project was created for learning purposes only. I wanted to utilize some of the transformation components available in Integration Services, build reports in Power Bi using a Multidimensional Model, and create calculations and KPI's in Analysis Services.
 
 ## Technologies Used
 

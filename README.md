@@ -45,8 +45,6 @@ C:\Program Files\Microsoft SQL Server\MSAS13.servername\OLAP\Backup
 
 Use Power Bi to view how the data is visualized. You can use the visualizations from the summary report to drillthrough to each detail report. Right click on a chart, select drillthrough, and it should give you the option of the appropriate report to navigate to.
 
-![Summary_Report](https://user-images.githubusercontent.com/59587505/119181468-421b8700-ba37-11eb-9546-79d8654f7af2.PNG)
-
 ![Country_Details_Report](https://user-images.githubusercontent.com/59587505/119181487-48a9fe80-ba37-11eb-875f-797974c7f77d.PNG)
 
 
